@@ -106,7 +106,9 @@ body{
     left: 0;
     z-index: 100;
     position: fixed;
+    margin-bottom: 80px;
 }
+
 
 .header .logo img{
     width: 130%;
@@ -1013,6 +1015,7 @@ body{
             background: url(../images/faq.jpg);
             background-repeat: no-repeat;
             background-size: cover;
+            padding: 80px 2rem 2rem 2rem;
         }
         
         .faq .row{
