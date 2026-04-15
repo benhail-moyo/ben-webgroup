@@ -28,7 +28,6 @@ body{
     top: 0;
     left: 0;
     z-index: 100;
-    position: fixed;
 }
 
 .header .logo img{
@@ -75,6 +74,8 @@ body{
     width: 100vw;
     background-image: url(../images/img3.jpg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,7 +110,8 @@ body{
     color: #333;
 }
 
-.heading::before, .heading::after{
+.heading::before,
+.heading::after{
     content: '';
     position: absolute;
     height: 2.5rem;
@@ -129,174 +131,193 @@ body{
     transform: rotate(180deg);
 }
 
-.career
-		{
-			width: 80%;
-			height: auto;
-			margin: 5rem auto 5rem auto;
-			display: flex;
-			flex-wrap: wrap;
-			padding: 10px;
-			border-radius: 10px;
-			background: #fff;
-			box-shadow: 0px 0px 10px 0px #666;
-		}
-		.career-form
-		{
-            margin-top: .5rem;
-			width: 100%;
-			height: auto;
-			flex: 50%;
-			text-align: left;
-		}
-		.career-form-txt, .career-form-experience
-		{
-            margin-left: 2rem;
-			width: 96.5%;
-			height: 40px;
-			color: #000;
-			border: 1px solid #bcbcbc;
-			border-radius: 50px;
-			outline: none;
-			margin-bottom: 20px;
-			padding: 15px;
-            font-size: 1.5rem;
-		}
-        .career-form-email
-		{
-            margin-left: 2rem;
-			width: 96.5%;
-			height: 40px;
-			color: #000;
-			border: 1px solid #bcbcbc;
-			border-radius: 50px;
-			outline: none;
-			margin-bottom: 20px;
-			padding: 15px;
-            font-size: 1.5rem;
-		}
-		.career-form-txt::placeholder, .career-form-experience::placeholder
-		{
-			color: #aaa;
-            font-size: 1.5rem;
-		}
-        .career-form-email::placeholder
-		{
-			color: #aaa;
-            font-size: 1.5rem;
-		}
-        .radio-class
-		{
-            margin-left: 1rem;
-			width: 110%;
-            margin-top: -2rem;
-			height: 40px;
-			color: #000;
-			margin-bottom: 5rem;
-			padding: 15px;
-		}
-        .radio
-        {
-            margin-top: .75rem;
-            font-size: 1.5rem;
-            margin-right: 9.5rem;
-        }
-		.career-form-txtarea
-		{
-            margin-left: 2rem;
-			width: 96.5%;
-			height: 130px;
-			color: #000;
-			border: 1px solid #bcbcbc;
-			border-radius: 10px;
-			outline: none;
-			margin-bottom: 20px;
-			padding: 15px;
-			font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-		}
-		.career-form-txtarea::placeholder
-		{
-			color: #aaa;
-            font-size: 1.5rem;
-		}
-        .file   
-		{
-            margin-left: 1rem;
-			width: 100%;
-            margin-top: -2.5rem;
-			height: 40px;
-			color: #000;
-			margin-bottom: 5rem;
-			padding: 15px;
-		}
-        .upload
-        {
-            margin-top: .75rem;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-		.career-form-btn
-		{
-            margin-left: 2rem;
-            outline: none;
-            border: none;
-            border-radius: 5rem;
-            background: white;
-            border-style: groove;
-            border-color: #002e5f;
-            font-size: 1.5rem;
-            cursor: pointer;
-            height: 3.5rem;
-            margin-top: 1rem;
-            margin-bottom: .5rem;
-            width: 15rem;
-            box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
-		}
-        .career-form-btn:hover{
-            letter-spacing: .1rem;
-            opacity: .9;
-            color: white;
-            background: #002e5f;
-        }
-		.career-form-phone
-		{
-            margin-left: 2rem;
-			width: 96.5%;
-			height: 40px;
-			color: #000;
-			border: 1px solid #bcbcbc;
-			border-radius: 50px;
-			outline: none;
-			margin-bottom: 20px;
-			padding: 15px;
-            font-size: 1.5rem;
-		}
-		.career-form-phone::placeholder
-		{
-			color: #aaa;
-            font-size: 1.5rem;
-		}
+/* ===== PROFESSIONAL CAREER FORM ===== */
 
-.footer {
-    position: relative;
-    padding: 0 0 30px 0;
-    background: #333;
+.career{
+    width: min(900px, 92%);
+    margin: 6rem auto;
+    padding: 3rem;
+    border-radius: 24px;
+    background: rgba(17, 24, 39, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-.footer .footer-top {
-    background: #002e5f;
+.career-form{
+    width: 100%;
+    text-align: left;
+}
+
+.career-form-txt,
+.career-form-email,
+.career-form-phone,
+.career-form-experience,
+.career-form-txtarea{
+    width: 100%;
+    margin: 0 0 1.8rem 0;
+    padding: 1.4rem 1.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-size: 1.5rem;
+    outline: none;
+    box-shadow: none;
+}
+
+.career-form-txt,
+.career-form-email,
+.career-form-phone,
+.career-form-experience{
+    height: 5rem;
+}
+
+.career-form-txtarea{
+    min-height: 15rem;
+    resize: vertical;
+    border-radius: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.career-form-txt::placeholder,
+.career-form-email::placeholder,
+.career-form-phone::placeholder,
+.career-form-experience::placeholder,
+.career-form-txtarea::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
+}
+
+.career-form-txt:hover,
+.career-form-email:hover,
+.career-form-phone:hover,
+.career-form-experience:hover,
+.career-form-txtarea:hover{
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.382);
+}
+
+.career-form-txt:focus,
+.career-form-email:focus,
+.career-form-phone:focus,
+.career-form-experience:focus,
+.career-form-txtarea:focus{
+    border-color: #00bfff;
+    background: rgba(255, 255, 255, 0.778);
+    box-shadow: 0 0 0 4px rgba(0, 191, 255, 0.381);
+}
+
+.radio-class{
+    width: 100%;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    height: auto;
+    color: #ffffff;
+}
+
+.radio-class .name,
+.file .name{
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+}
+
+.radio-group{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1.2rem;
+}
+
+.radio{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 1.2rem 1.4rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.145);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #f3f4f6;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.radio:hover{
+    border-color: #00bfff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.radio input[type="radio"]{
+    accent-color: #00bfff;
+    transform: scale(1.1);
+}
+
+.file{
+    width: 100%;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    height: auto;
+    color: #ffffff;
+}
+
+.upload{
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+    color: #d1d5db;
+}
+
+.career-form-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+    margin: 1rem 0 0 0;
+    padding: 0 2rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #00bfff, #385779);
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(0, 46, 95, 0.35);
+}
+
+.career-form-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 18px 35px rgba(0, 46, 95, 0.45);
+}
+
+.career-form-btn:active{
+    transform: translateY(0);
+}
+
+.footer{
+    position: relative;
+    padding: 0 0 30px 0;
+    background: #3385ff96;
+}
+
+.footer .footer-top{
+    background: #245b96;
     padding: 60px 0 30px 0;
 }
 
 .footer .footer-top .footer-info,
 .footer .footer-top .footer-links,
 .footer .footer-top .footer-contact,
-.footer .footer-top .footer-newsletter {
+.footer .footer-top .footer-newsletter{
     margin-bottom: 30px;
 }
 
-.footer .footer-top .social-links a {
+.footer .footer-top .social-links a{
     font-size: 18px;
     display: inline-block;
     background: #ffffff;
@@ -310,12 +331,12 @@ body{
     transition: 0.3s;
 }
 
-.footer .footer-top .social-links a:hover {
+.footer .footer-top .social-links a:hover{
     background: #00bfff;
     color: #ffffff;
 }
 
-.footer .footer-top h4 {
+.footer .footer-top h4{
     font-size: 16px;
     font-weight: 700;
     color: #ffffff;
@@ -326,7 +347,7 @@ body{
     letter-spacing: 1px;
 }
 
-.footer .footer-top h4::before {
+.footer .footer-top h4::before{
     content: '';
     position: absolute;
     left: 0;
@@ -336,42 +357,42 @@ body{
     border-bottom: 2px solid #ffffff;
 }
 
-.footer .footer-top .footer-links ul {
+.footer .footer-top .footer-links ul{
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer .footer-top .footer-links ul i {
+.footer .footer-top .footer-links ul i{
     padding-right: 8px;
     color: #ffffff;
     font-size: 16px;
 }
 
-.footer .footer-top .footer-links ul li {
+.footer .footer-top .footer-links ul li{
     border-bottom: 1px solid #ffffff;
     padding: 7px 0;
 }
 
-.footer .footer-top .footer-links ul li:first-child {
+.footer .footer-top .footer-links ul li:first-child{
     padding-top: 0;
 }
 
-.footer .footer-top .footer-links ul a {
+.footer .footer-top .footer-links ul a{
     font-size: 14px;
     color: #ffffff;
 }
 
-.footer .footer-top .footer-links ul a:hover {
+.footer .footer-top .footer-links ul a:hover{
     color: #00bfff;
 }
 
-.footer .footer-top .footer-contact p {
+.footer .footer-top .footer-contact p{
     color: #ffffff;
     line-height: 26px;
 }
 
-.footer .footer-top .footer-newsletter input[type="email"] {
+.footer .footer-top .footer-newsletter input[type="email"]{
     padding: 6px 8px;
     width: 60%;
     border: 1px solid #ffffff;
@@ -379,7 +400,7 @@ body{
     color: #ffffff;
 }
 
-.footer .footer-top .footer-newsletter input[type="submit"] {
+.footer .footer-top .footer-newsletter input[type="submit"]{
     border: 0;
     width: 40%;
     padding: 6px 0;
@@ -391,28 +412,28 @@ body{
     cursor: pointer;
 }
 
-.footer .footer-top .footer-newsletter input[type="submit"]:hover {
+.footer .footer-top .footer-newsletter input[type="submit"]:hover{
     color: #ffffff;
     background: #00bfff;
     border: 1px solid #00bfff;
     letter-spacing: .2rem;
 }
 
-.footer .footer-top .footer-newsletter p {
+.footer .footer-top .footer-newsletter p{
     color: #ffffff;
     font-size: 14px;
 }
 
 .footer .credit,
-.footer .copyright {
+.footer .copyright{
     text-align: center;
     padding-top: 30px;
 }
 
-.back-to-top {
+.back-to-top{
     position: fixed;
     display: none;
-    background-color: #00bfff;
+    background-color: #5271b5;
     color: #ffffff;
     width: 45px;
     height: 45px;
@@ -425,20 +446,20 @@ body{
     z-index: 9;
 }
 
-.back-to-top i {
+.back-to-top i{
     color: #ffffff;
 }
 
-.back-to-top i:hover {
-    color: black;
+.back-to-top i:hover{
+    color: rgb(58, 53, 146);
 }
 
-@media (min-width: 768px) {
-    .footer .credit {
+@media (min-width: 768px){
+    .footer .credit{
         text-align: right;
     }
     
-    .footer .copyright {
+    .footer .copyright{
         text-align: left;
     }
 }
@@ -458,7 +479,7 @@ body{
 
     .header .fa-bars{
         display: block;
-        color: 	white;
+        color: white;
     }
 
     .header .fa-bars:hover{
@@ -508,159 +529,84 @@ body{
         font-size: 4rem;
     }
 
-    .back-to-top {
+    .back-to-top{
         width: 30px;
         height: 30px;
         font-size: 30px;
     }
+
+    .career{
+        width: 94%;
+        padding: 2rem 1.4rem;
+        border-radius: 18px;
+        background: rgba(93, 129, 207, 0.88);
+    }
+
+    .radio-group{
+        grid-template-columns: 1fr;
+    }
+
+    .career-form-btn{
+        width: 100%;
+    }
 }
 
-@media (max-width: 1500px){
-    .career
-    {
-        width: 80%;
-        height: auto;
-        margin: 5rem auto 5rem auto;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 10px;
-        border-radius: 10px;
-        background: #fff;
-        box-shadow: 0px 0px 10px 0px #666;
+@media (max-width: 768px){
+    .career{
+        width: 94%;
+        padding: 2rem 1.4rem;
+        border-radius: 18px;
     }
-    .career-form
-    {
-        margin-top: .5rem;
+
+    .radio-group{
+        grid-template-columns: 1fr;
+    }
+
+    .career-form-btn{
         width: 100%;
-        height: auto;
-        flex: 50%;
-        text-align: left;
     }
-    .career-form-txt, .career-form-experience
-    {
-        margin-left: 1rem;
-        width: 96.5%;
-        height: 40px;
-        color: #000;
-        border: 1px solid #bcbcbc;
-        border-radius: 50px;
-        outline: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        font-size: 1.5rem;
-    }
-    .career-form-email
-    {
-        margin-left: 1rem;
-        width: 96.5%;
-        height: 40px;
-        color: #000;
-        border: 1px solid #bcbcbc;
-        border-radius: 50px;
-        outline: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        font-size: 1.5rem;
-    }
-    .career-form-txt::placeholder, .career-form-experience::placeholder
-    {
-        color: #aaa;
-        font-size: 1.5rem;
-    }
-    .career-form-email::placeholder
-    {
-        color: #aaa;
-        font-size: 1.5rem;
-    }
-    .radio-class
-    {
-        margin-left: 0;
-        width: 110%;
-        margin-top: -2.5rem;
-        height: auto;
-        color: #000;
-        margin-bottom: auto;
-        padding: 15px;
-    }
-    .radio
-    {
-        font-size: 1.5rem;
-        margin-right: 5rem;
-    }
-    .career-form-txtarea
-    {
-        margin-left: 1rem;
-        width: 96.5%;
-        height: 130px;
-        color: #000;
-        border: 1px solid #bcbcbc;
-        border-radius: 10px;
-        outline: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.5rem;
-    }
-    .career-form-txtarea::placeholder
-    {
-        color: #aaa;
-        font-size: 1.5rem;
-    }
-    .file   
-    {
-        margin-left: 0;
-        width: 100%;
-        margin-top: -2.5rem;
-        height: 40px;
-        color: #000;
-        margin-bottom: 5rem;
-        padding: 15px;
-    }
-    .upload
-    {
-        margin-top: .75rem;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    .career-form-btn
-    {
-        margin-left: 1rem;
-        outline: none;
-        border: none;
-        border-radius: 5rem;
-        background: white;
-        border-style: groove;
-        border-color: #002e5f;
-        font-size: 1.5rem;
-        cursor: pointer;
-        height: 3.5rem;
-        margin-top: 1rem;
-        margin-bottom: .5rem;
-        width: 15rem;
-        box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
-    }
-    .career-form-btn:hover{
-        letter-spacing: .1rem;
-        opacity: .9;
-        color: white;
-        background: #002e5f;
-    }
-    .career-form-phone
-    {
-        margin-left: 1rem;
-        width: 96.5%;
-        height: 40px;
-        color: #000;
-        border: 1px solid #bcbcbc;
-        border-radius: 50px;
-        outline: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        font-size: 1.5rem;
-    }
-    .career-form-phone::placeholder
-    {
-        color: #aaa;
-        font-size: 1.5rem;
-    }
+}
+
+
+
+.footer .footer-contact,
+.footer .footer-newsletter {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+
+.footer .footer-contact:hover,
+.footer .footer-newsletter:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.footer .row {
+    gap: 20px;
+}
+
+.footer .footer-contact p {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+.footer .footer-newsletter p {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+
+
+.footer .footer-newsletter input[type="email"] {
+    border-radius: 8px 0 0 8px;
+    padding: 10px;
+}
+
+.footer .footer-newsletter input[type="submit"] {
+    border-radius: 0 8px 8px 0;
 }
