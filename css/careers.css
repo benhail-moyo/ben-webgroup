@@ -1,36 +1,43 @@
+/* ===== GOOGLE FONTS IMPORT ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 
+/* ===== GLOBAL RESET & BASE STYLES ===== */
+/* Applies consistent defaults to all elements */
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-transform: capitalize;
-    transition: all .2s linear;
+    transition: all .2s linear; /* Smooth transition for all property changes */
     text-decoration: none;
 }
 
+/* Sets base font size to 10px so 1rem = 10px for easy scaling */
 html{
     font-size: 62.5%;
 }
 
+/* Prevents horizontal scrollbar from appearing */
 body{
     overflow-x: hidden;
 }
 
+/* ===== HEADER ===== */
+/* Fixed top navigation bar spanning full width */
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 1rem 2rem;
-    position: fixed;
+    position: fixed; /* Stays at top while scrolling */
     top: 0;
     left: 0;
-    z-index: 100;
-    position: fixed;
+    z-index: 100; /* Sits above most page content */
 }
 
+/* Logo image sizing within the header */
 .header .logo img{
     width: 20%;
     height: 3rem;
@@ -38,6 +45,7 @@ body{
     left: 0;
 }
 
+/* Horizontal navigation list layout */
 .header .navbar ul{
     list-style-type: none;
     display: flex;
@@ -45,24 +53,29 @@ body{
     justify-content: space-around;
 }
 
+/* Spacing between nav items */
 .header .navbar ul li{
     margin: 0 1.5rem;
 }
 
+/* Nav link default style — white text */
 .header .navbar ul li a{
     font-size: 2rem;
     color: #fff;
 }
 
+/* Nav link hover — highlight blue with underline */
 .header .navbar ul li a:hover{
     color: #00bfff;
     text-decoration: underline;
 }
 
+/* Logo icon padding */
 .header .logo i{
     padding: 0.5rem;
 }
 
+/* Hamburger menu icon — hidden on desktop, shown on mobile */
 .header .fa-bars{
     color: #fff;
     cursor: pointer;
@@ -70,11 +83,15 @@ body{
     display: none;
 }
 
+/* ===== HERO / HOME SECTION ===== */
+/* Full-width hero section with background image */
 .home{
     min-height: 70vh;
     width: 100vw;
     background-image: url(../images/img3.jpg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,222 +102,269 @@ body{
     overflow: hidden !important;
 }
 
+/* Hero heading text */
 .home h2{
     color: #fff;
     font-size: 5.5rem;
 }
 
+/* ===== CAREER SECTION HEADING ===== */
+/* Centered heading container */
 .career-heading{
     text-align: center;
 }
 
+/* Section title with decorative bracket corners using pseudo-elements */
 .heading{
     padding-top: 6rem;
     display: inline-block;
     font-size: 3.5rem;
-    color: #002e5f;
-    position: relative;
+    color: #0c447c; /* Updated: dark navy blue for light mode readability */
+    position: relative; /* Needed for ::before and ::after positioning */
     letter-spacing: .2rem;
     margin: -2rem auto 2rem auto;
 }
 
+/* Subtext below section heading — updated to blue for light mode */
 .career-heading p{
     font-size: 2rem;
-    color: #333;
+    color: #185fa5;
 }
 
-.heading::before, .heading::after{
+/* Shared styles for top-left and bottom-right corner brackets */
+.heading::before,
+.heading::after{
     content: '';
     position: absolute;
     height: 2.5rem;
     width: 2.5rem;
-    border-top: .4rem solid #002e5f;
-    border-left: .4rem solid #002e5f;
+    border-top: .4rem solid #0c447c; /* Updated: matches new heading color */
+    border-left: .4rem solid #0c447c;
 }
 
+/* Top-left corner bracket */
 .heading::before{
     top: 5.8rem;
     left: -2rem;
 }
 
+/* Bottom-right corner bracket — rotated 180deg to flip orientation */
 .heading::after{
     bottom: -.5rem;
     right: -2rem;
     transform: rotate(180deg);
 }
 
-.career
-		{
-			width: 80%;
-			height: auto;
-			margin: 5rem auto 5rem auto;
-			display: flex;
-			flex-wrap: wrap;
-			padding: 10px;
-			border-radius: 10px;
-			background: #fff;
-			box-shadow: 0px 0px 10px 0px #666;
-		}
-		.career-form
-		{
-            margin-top: .5rem;
-			width: 100%;
-			height: auto;
-			flex: 50%;
-			text-align: left;
-		}
-		.career-form-txt, .career-form-experience
-		{
-            margin-left: 2rem;
-			width: 96.5%;
-			height: 40px;
-			color: #000;
-			border: 1px solid #bcbcbc;
-			border-radius: 50px;
-			outline: none;
-			margin-bottom: 20px;
-			padding: 15px;
-            font-size: 1.5rem;
-		}
-        .career-form-email
-		{
-            margin-left: 2rem;
-			width: 96.5%;
-			height: 40px;
-			color: #000;
-			border: 1px solid #bcbcbc;
-			border-radius: 50px;
-			outline: none;
-			margin-bottom: 20px;
-			padding: 15px;
-            font-size: 1.5rem;
-		}
-		.career-form-txt::placeholder, .career-form-experience::placeholder
-		{
-			color: #aaa;
-            font-size: 1.5rem;
-		}
-        .career-form-email::placeholder
-		{
-			color: #aaa;
-            font-size: 1.5rem;
-		}
-        .radio-class
-		{
-            margin-left: 1rem;
-			width: 110%;
-            margin-top: -2rem;
-			height: 40px;
-			color: #000;
-			margin-bottom: 5rem;
-			padding: 15px;
-		}
-        .radio
-        {
-            margin-top: .75rem;
-            font-size: 1.5rem;
-            margin-right: 9.5rem;
-        }
-		.career-form-txtarea
-		{
-            margin-left: 2rem;
-			width: 96.5%;
-			height: 130px;
-			color: #000;
-			border: 1px solid #bcbcbc;
-			border-radius: 10px;
-			outline: none;
-			margin-bottom: 20px;
-			padding: 15px;
-			font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-		}
-		.career-form-txtarea::placeholder
-		{
-			color: #aaa;
-            font-size: 1.5rem;
-		}
-        .file   
-		{
-            margin-left: 1rem;
-			width: 100%;
-            margin-top: -2.5rem;
-			height: 40px;
-			color: #000;
-			margin-bottom: 5rem;
-			padding: 15px;
-		}
-        .upload
-        {
-            margin-top: .75rem;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-		.career-form-btn
-		{
-            margin-left: 2rem;
-            outline: none;
-            border: none;
-            border-radius: 5rem;
-            background: white;
-            border-style: groove;
-            border-color: #002e5f;
-            font-size: 1.5rem;
-            cursor: pointer;
-            height: 3.5rem;
-            margin-top: 1rem;
-            margin-bottom: .5rem;
-            width: 15rem;
-            box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
-		}
-        .career-form-btn:hover{
-            letter-spacing: .1rem;
-            opacity: .9;
-            color: white;
-            background: #002e5f;
-        }
-		.career-form-phone
-		{
-            margin-left: 2rem;
-			width: 96.5%;
-			height: 40px;
-			color: #000;
-			border: 1px solid #bcbcbc;
-			border-radius: 50px;
-			outline: none;
-			margin-bottom: 20px;
-			padding: 15px;
-            font-size: 1.5rem;
-		}
-		.career-form-phone::placeholder
-		{
-			color: #aaa;
-            font-size: 1.5rem;
-		}
-
-.footer {
-    position: relative;
-    padding: 0 0 30px 0;
-    background: #333;
+/* ===== CAREER FORM CONTAINER ===== */
+/* Light mode card — soft blue-white surface with blue border */
+.career{
+    width: min(900px, 92%); /* Responsive: max 900px, shrinks on small screens */
+    margin: 6rem auto;
+    padding: 3rem;
+    border-radius: 24px;
+    background: #f0f6ff; /* Light blue-white background */
+    border: 1px solid #b5d4f4; /* Soft blue border */
+    box-shadow: 0 8px 32px rgba(24, 95, 165, 0.10); /* Subtle blue-tinted shadow */
+    backdrop-filter: none; /* Removed: not needed for light mode */
+    -webkit-backdrop-filter: none;
 }
 
-.footer .footer-top {
-    background: #002e5f;
+/* Full-width left-aligned form layout */
+.career-form{
+    width: 100%;
+    text-align: left;
+}
+
+/* ===== FORM INPUT FIELDS ===== */
+/* Shared styles for all text, email, phone, experience inputs and textarea */
+.career-form-txt,
+.career-form-email,
+.career-form-phone,
+.career-form-experience,
+.career-form-txtarea{
+    width: 100%;
+    margin: 0 0 1.8rem 0;
+    padding: 1.4rem 1.6rem;
+    border: 1px solid #b5d4f4; /* Soft blue border */
+    border-radius: 14px;
+    background: #ffffff; /* Clean white background */
+    color: #042c53; /* Deep navy text for strong readability */
+    font-size: 1.5rem;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Fixed height for single-line inputs */
+.career-form-txt,
+.career-form-email,
+.career-form-phone,
+.career-form-experience{
+    height: 5rem;
+}
+
+/* Textarea — taller with vertical resize only */
+.career-form-txtarea{
+    min-height: 15rem;
+    resize: vertical;
+    border-radius: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Placeholder text — muted blue tone */
+.career-form-txt::placeholder,
+.career-form-email::placeholder,
+.career-form-phone::placeholder,
+.career-form-experience::placeholder,
+.career-form-txtarea::placeholder{
+    color: #7aaad4; /* Muted blue for placeholder text */
+    font-size: 1.5rem;
+}
+
+/* Hover state — stronger blue border */
+.career-form-txt:hover,
+.career-form-email:hover,
+.career-form-phone:hover,
+.career-form-experience:hover,
+.career-form-txtarea:hover{
+    border-color: #378add; /* Brighter blue on hover */
+    background: #ffffff;
+}
+
+/* Focus state — deeper blue border with blue glow ring */
+.career-form-txt:focus,
+.career-form-email:focus,
+.career-form-phone:focus,
+.career-form-experience:focus,
+.career-form-txtarea:focus{
+    border-color: #185fa5; /* Dark blue on focus */
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.18); /* Subtle blue glow ring */
+}
+
+/* ===== RADIO BUTTON GROUP ===== */
+/* Container for labeled radio options */
+.radio-class{
+    width: 100%;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    height: auto;
+    color: #042c53; /* Deep navy text */
+}
+
+/* Label above radio group and file upload — dark navy */
+.radio-class .name,
+.file .name{
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0c447c; /* Navy blue heading */
+    margin-bottom: 1.2rem;
+}
+
+/* Individual radio option row — light blue card */
+.radio{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 1rem 0;
+    padding: 1.2rem 1.4rem;
+    border-radius: 14px;
+    background: #e6f1fb; /* Light blue background */
+    border: 1px solid #b5d4f4; /* Soft blue border */
+    color: #185fa5; /* Medium blue text */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Radio option hover — slightly deeper blue border */
+.radio:hover{
+    border-color: #378add;
+    background: #d0e8f8; /* Slightly deeper light blue */
+}
+
+/* Accent color for radio input dot */
+.radio input[type="radio"]{
+    accent-color: #378add; /* Blue radio dot */
+    transform: scale(1.1); /* Slightly enlarged for visibility */
+}
+
+/* ===== FILE UPLOAD FIELD ===== */
+.file{
+    width: 100%;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    height: auto;
+    color: #042c53;
+}
+
+/* Helper text shown below file input */
+.upload{
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+    color: #185fa5; /* Medium blue helper text */
+}
+
+/* ===== SUBMIT BUTTON ===== */
+/* Full-width solid navy blue pill button */
+.career-form-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+    margin: 1rem 0 0 0;
+    padding: 0 2rem;
+    border: none;
+    border-radius: 999px; /* Fully rounded pill shape */
+    background: linear-gradient(135deg, #185fa5, #0c447c); /* Navy blue gradient */
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(12, 68, 124, 0.25); /* Soft blue shadow */
+}
+
+/* Button hover — lifts up with deeper shadow */
+.career-form-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(12, 68, 124, 0.35);
+}
+
+/* Button active/click — snaps back to original position */
+.career-form-btn:active{
+    transform: translateY(0);
+}
+
+/* ===== FOOTER ===== */
+/* Outer footer wrapper */
+.footer{
+    position: relative;
+    padding: 0 0 30px 0;
+    background: #e6f1fb; /* Light blue footer background */
+}
+
+/* Top section of footer with solid navy background */
+.footer .footer-top{
+    background: #0c447c; /* Deep navy — provides contrast for white text */
     padding: 60px 0 30px 0;
 }
 
+/* Footer column spacing */
 .footer .footer-top .footer-info,
 .footer .footer-top .footer-links,
 .footer .footer-top .footer-contact,
-.footer .footer-top .footer-newsletter {
+.footer .footer-top .footer-newsletter{
     margin-bottom: 30px;
 }
 
-.footer .footer-top .social-links a {
+/* Social media icon buttons */
+.footer .footer-top .social-links a{
     font-size: 18px;
     display: inline-block;
     background: #ffffff;
-    color: #00bfff;
+    color: #185fa5; /* Blue icon color */
     line-height: 1;
     padding: 9px 0;
     margin-right: 4px;
@@ -310,12 +374,14 @@ body{
     transition: 0.3s;
 }
 
-.footer .footer-top .social-links a:hover {
-    background: #00bfff;
+/* Social icon hover — invert to blue background */
+.footer .footer-top .social-links a:hover{
+    background: #378add;
     color: #ffffff;
 }
 
-.footer .footer-top h4 {
+/* Footer column headings */
+.footer .footer-top h4{
     font-size: 16px;
     font-weight: 700;
     color: #ffffff;
@@ -326,93 +392,126 @@ body{
     letter-spacing: 1px;
 }
 
-.footer .footer-top h4::before {
+/* Underline accent below footer headings */
+.footer .footer-top h4::before{
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     height: 0;
     width: 50px;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #85b7eb; /* Light blue accent line */
 }
 
-.footer .footer-top .footer-links ul {
+/* Footer navigation list reset */
+.footer .footer-top .footer-links ul{
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer .footer-top .footer-links ul i {
+/* Arrow icons beside footer links */
+.footer .footer-top .footer-links ul i{
     padding-right: 8px;
-    color: #ffffff;
+    color: #85b7eb; /* Lighter blue for icons */
     font-size: 16px;
 }
 
-.footer .footer-top .footer-links ul li {
-    border-bottom: 1px solid #ffffff;
+/* Divider line between footer link items */
+.footer .footer-top .footer-links ul li{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Subtle white divider */
     padding: 7px 0;
 }
 
-.footer .footer-top .footer-links ul li:first-child {
+/* Remove top padding from first list item */
+.footer .footer-top .footer-links ul li:first-child{
     padding-top: 0;
 }
 
-.footer .footer-top .footer-links ul a {
+/* Footer link default — white text */
+.footer .footer-top .footer-links ul a{
     font-size: 14px;
     color: #ffffff;
 }
 
-.footer .footer-top .footer-links ul a:hover {
-    color: #00bfff;
+/* Footer link hover — light blue highlight */
+.footer .footer-top .footer-links ul a:hover{
+    color: #85b7eb;
 }
 
-.footer .footer-top .footer-contact p {
-    color: #ffffff;
+/* Contact info paragraph text */
+.footer .footer-top .footer-contact p{
+    color: #e6f1fb; /* Very light blue-white text */
     line-height: 26px;
 }
 
-.footer .footer-top .footer-newsletter input[type="email"] {
-    padding: 6px 8px;
-    width: 60%;
-    border: 1px solid #ffffff;
-    background: transparent;
-    color: #ffffff;
-}
-
-.footer .footer-top .footer-newsletter input[type="submit"] {
-    border: 0;
-    width: 40%;
-    padding: 6px 0;
-    text-align: center;
-    color: black;
-    border: 1px solid #ffffff;
-    background: #ffffff;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.footer .footer-top .footer-newsletter input[type="submit"]:hover {
-    color: #ffffff;
-    background: #00bfff;
-    border: 1px solid #00bfff;
-    letter-spacing: .2rem;
-}
-
-.footer .footer-top .footer-newsletter p {
-    color: #ffffff;
+/* Newsletter description text */
+.footer .footer-top .footer-newsletter p{
+    color: #e6f1fb;
     font-size: 14px;
 }
 
+/* ===== NEWSLETTER FORM ===== */
+/* Side-by-side email input + submit button layout */
+.footer .footer-newsletter form{
+    display: flex;
+    width: 100%;
+    margin-top: 1.5rem;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+/* Email input — stretches to fill available space */
+.footer .footer-newsletter input[type="email"]{
+    flex: 1;
+    min-width: 0; /* Prevents overflow in flex container */
+    padding: 10px 12px;
+    border: 1px solid #85b7eb; /* Light blue border */
+    border-right: none; /* Seamlessly connects to submit button */
+    border-radius: 8px 0 0 8px;
+    background: rgba(255, 255, 255, 0.08); /* Subtle white tint */
+    color: #ffffff;
+    outline: none;
+}
+
+/* Placeholder text for email input */
+.footer .footer-newsletter input[type="email"]::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Subscribe button — attached to right side of input */
+.footer .footer-newsletter input[type="submit"]{
+    padding: 10px 16px;
+    border: 1px solid #85b7eb;
+    border-radius: 0 8px 8px 0;
+    background: #378add; /* Medium blue button */
+    color: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+    white-space: nowrap; /* Prevents button text from wrapping */
+    flex-shrink: 0;
+}
+
+/* Subscribe button hover — deeper navy */
+.footer .footer-top .footer-newsletter input[type="submit"]:hover{
+    background: #185fa5;
+    border: 1px solid #185fa5;
+    letter-spacing: .1rem;
+}
+
+/* ===== FOOTER BOTTOM BAR ===== */
 .footer .credit,
-.footer .copyright {
+.footer .copyright{
     text-align: center;
     padding-top: 30px;
 }
 
-.back-to-top {
+/* ===== BACK TO TOP BUTTON ===== */
+/* Fixed floating button in bottom-right corner */
+.back-to-top{
     position: fixed;
-    display: none;
-    background-color: #00bfff;
+    display: none; /* Hidden until user scrolls down (shown via JS) */
+    background-color: #185fa5; /* Medium navy blue */
     color: #ffffff;
     width: 45px;
     height: 45px;
@@ -425,25 +524,30 @@ body{
     z-index: 9;
 }
 
-.back-to-top i {
+.back-to-top i{
     color: #ffffff;
 }
 
-.back-to-top i:hover {
-    color: black;
+/* Back-to-top icon hover color */
+.back-to-top i:hover{
+    color: #b5d4f4; /* Light blue on hover */
 }
 
-@media (min-width: 768px) {
-    .footer .credit {
+/* ===== RESPONSIVE: TABLET & ABOVE (768px+) ===== */
+/* Align footer credit/copyright to opposite sides */
+@media (min-width: 768px){
+    .footer .credit{
         text-align: right;
     }
-    
-    .footer .copyright {
+
+    .footer .copyright{
         text-align: left;
     }
 }
 
+/* ===== RESPONSIVE: TABLET & BELOW (max 1000px) ===== */
 @media (max-width: 1000px){
+    /* Slightly reduce base font size for smaller screens */
     html{
         font-size: 50%;
     }
@@ -456,26 +560,29 @@ body{
         background-size: cover;
     }
 
+    /* Show hamburger icon on mobile */
     .header .fa-bars{
         display: block;
-        color: 	white;
+        color: white;
     }
 
     .header .fa-bars:hover{
-        color: #00bfff;
+        color: #378add; /* Blue hover on hamburger */
     }
 
+    /* Mobile nav — hidden above viewport by default, toggled via JS */
     .header .navbar{
         position: fixed;
-        top: -120%;
+        top: -120%; /* Off-screen by default */
         left: 0;
         height: auto;
         width: 100%;
-        background-color: white;
+        background-color: #f0f6ff; /* Light blue-white mobile menu background */
         z-index: 1000;
-        border-top: .1rem solid rgba(0,0,0,.3);
+        border-top: .1rem solid #b5d4f4; /* Soft blue border */
     }
 
+    /* Stack nav links vertically on mobile */
     .header .navbar ul{
         height: 100%;
         width: 100%;
@@ -486,19 +593,23 @@ body{
         margin: 1rem 0;
     }
 
+    /* Navy link color on light mobile menu */
     .header .navbar ul li a{
-        color: grey;
+        color: #185fa5;
         font-size: 2.4rem;
     }
 
+    /* Rotate close icon for visual effect */
     .header .fa-times{
         transform: rotate(90deg);
     }
 
+    /* Position open nav below header */
     .header .nav-toggle{
         top: 5.8rem;
     }
 
+    /* Reduce hero height on smaller screens */
     .home{
         min-height: 60vh;
     }
@@ -508,159 +619,90 @@ body{
         font-size: 4rem;
     }
 
-    .back-to-top {
+    /* Smaller back-to-top button on mobile */
+    .back-to-top{
         width: 30px;
         height: 30px;
         font-size: 30px;
     }
+
+    /* Adjust career form card for mobile — keep light mode style */
+    .career{
+        width: 94%;
+        padding: 2rem 1.4rem;
+        border-radius: 18px;
+        background: #f0f6ff; /* Consistent light blue-white */
+    }
+
+    .career-form-btn{
+        width: 100%;
+    }
 }
 
-@media (max-width: 1500px){
-    .career
-    {
-        width: 80%;
-        height: auto;
-        margin: 5rem auto 5rem auto;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 10px;
-        border-radius: 10px;
-        background: #fff;
-        box-shadow: 0px 0px 10px 0px #666;
+/* ===== RESPONSIVE: MOBILE (max 768px) ===== */
+@media (max-width: 768px){
+    .career{
+        width: 94%;
+        padding: 2rem 1.4rem;
+        border-radius: 18px;
     }
-    .career-form
-    {
-        margin-top: .5rem;
+
+    .career-form-btn{
         width: 100%;
-        height: auto;
-        flex: 50%;
-        text-align: left;
     }
-    .career-form-txt, .career-form-experience
-    {
-        margin-left: 1rem;
-        width: 96.5%;
-        height: 40px;
-        color: #000;
-        border: 1px solid #bcbcbc;
-        border-radius: 50px;
-        outline: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        font-size: 1.5rem;
+
+    /* Stack newsletter form vertically on small screens */
+    .footer .footer-newsletter form{
+        flex-direction: column;
+        gap: 1rem;
     }
-    .career-form-email
-    {
-        margin-left: 1rem;
-        width: 96.5%;
-        height: 40px;
-        color: #000;
-        border: 1px solid #bcbcbc;
-        border-radius: 50px;
-        outline: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        font-size: 1.5rem;
-    }
-    .career-form-txt::placeholder, .career-form-experience::placeholder
-    {
-        color: #aaa;
-        font-size: 1.5rem;
-    }
-    .career-form-email::placeholder
-    {
-        color: #aaa;
-        font-size: 1.5rem;
-    }
-    .radio-class
-    {
-        margin-left: 0;
-        width: 110%;
-        margin-top: -2.5rem;
-        height: auto;
-        color: #000;
-        margin-bottom: auto;
-        padding: 15px;
-    }
-    .radio
-    {
-        font-size: 1.5rem;
-        margin-right: 5rem;
-    }
-    .career-form-txtarea
-    {
-        margin-left: 1rem;
-        width: 96.5%;
-        height: 130px;
-        color: #000;
-        border: 1px solid #bcbcbc;
-        border-radius: 10px;
-        outline: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.5rem;
-    }
-    .career-form-txtarea::placeholder
-    {
-        color: #aaa;
-        font-size: 1.5rem;
-    }
-    .file   
-    {
-        margin-left: 0;
+
+    /* Full-width email input on mobile — restore all borders */
+    .footer .footer-newsletter input[type="email"]{
         width: 100%;
-        margin-top: -2.5rem;
-        height: 40px;
-        color: #000;
-        margin-bottom: 5rem;
-        padding: 15px;
+        border-right: 1px solid #85b7eb;
+        border-radius: 8px;
     }
-    .upload
-    {
-        margin-top: .75rem;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
+
+    /* Full-width submit button on mobile */
+    .footer .footer-newsletter input[type="submit"]{
+        width: 100%;
+        border-radius: 8px;
     }
-    .career-form-btn
-    {
-        margin-left: 1rem;
-        outline: none;
-        border: none;
-        border-radius: 5rem;
-        background: white;
-        border-style: groove;
-        border-color: #002e5f;
-        font-size: 1.5rem;
-        cursor: pointer;
-        height: 3.5rem;
-        margin-top: 1rem;
-        margin-bottom: .5rem;
-        width: 15rem;
-        box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
-    }
-    .career-form-btn:hover{
-        letter-spacing: .1rem;
-        opacity: .9;
-        color: white;
-        background: #002e5f;
-    }
-    .career-form-phone
-    {
-        margin-left: 1rem;
-        width: 96.5%;
-        height: 40px;
-        color: #000;
-        border: 1px solid #bcbcbc;
-        border-radius: 50px;
-        outline: none;
-        margin-bottom: 20px;
-        padding: 15px;
-        font-size: 1.5rem;
-    }
-    .career-form-phone::placeholder
-    {
-        color: #aaa;
-        font-size: 1.5rem;
-    }
+}
+
+/* ===== FOOTER CONTACT & NEWSLETTER CARD STYLES ===== */
+/* Soft frosted card effect for contact and newsletter blocks */
+.footer .footer-contact,
+.footer .footer-newsletter{
+    background: rgba(255, 255, 255, 0.10); /* Subtle white tint over navy */
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: 0.3s;
+}
+
+/* Card hover — lifts with shadow */
+.footer .footer-contact:hover,
+.footer .footer-newsletter:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(12, 68, 124, 0.25); /* Blue-tinted shadow */
+}
+
+/* Row gap between footer columns */
+.footer .row{
+    gap: 20px;
+}
+
+/* Contact paragraph sizing */
+.footer .footer-contact p{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+/* Newsletter paragraph sizing */
+.footer .footer-newsletter p{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
 }
