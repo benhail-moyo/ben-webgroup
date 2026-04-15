@@ -52,7 +52,11 @@
             <h3>We make creativity work for your brand!</h3>
             <p>Ours is a team of creatives that is brainstorming on great ideas,<b> all. the. time.</b><br>
                 With our skills put together, you get an ensemble capable of doing anything and everything your brand needs.</p>
-            <a href="#"><button class="btn">Read More</button></a>
+            <button id="about-toggle" class="btn" type="button">Read More</button>
+            <div id="about-more" class="about-more" style="display:none; margin-top: 1.5rem; text-align:left;">
+                <p>From concept to launch, our company delivers practical digital solutions for small businesses, startups and established brands. We specialize in responsive website design, custom web applications, mobile apps, and digital marketing campaigns that help clients attract visitors and convert leads.</p>
+                <p>We combine user-centered design, modern development practices and ongoing support so every project performs reliably and grows with the business. Our team is known for clear communication, fast delivery, and a focus on making each client’s online presence easy to manage and memorable.</p>
+            </div>
         </div>
     </div>
   </section>
@@ -89,6 +93,23 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+  // Toggle the About Us extra company details when the button is clicked.
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggleButton = document.getElementById('about-toggle');
+    var extraContent = document.getElementById('about-more');
+
+    if (!toggleButton || !extraContent) {
+      return;
+    }
+
+    toggleButton.addEventListener('click', function () {
+      var isHidden = extraContent.style.display === 'none' || extraContent.style.display === '';
+      extraContent.style.display = isHidden ? 'block' : 'none';
+      toggleButton.textContent = isHidden ? 'Read Less' : 'Read More';
+    });
+  });
+</script>
 
   <section class="counters">
     <div class="container">
