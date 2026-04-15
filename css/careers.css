@@ -706,3 +706,129 @@ body{
     font-size: 1.4rem;
     line-height: 2.2rem;
 }
+
+/* ================================================================
+   DARK MODE — careers page specific overrides
+   Activated when <html data-theme="dark"> is set by theme.js
+   ================================================================ */
+
+[data-theme="dark"] body {
+    background-color: #0f172a;
+    color: #cbd5e1;
+}
+
+/* --- Heading --- */
+[data-theme="dark"] .heading {
+    color: #38bdf8 !important;
+}
+[data-theme="dark"] .heading::before,
+[data-theme="dark"] .heading::after {
+    border-color: #38bdf8 !important;
+}
+
+/* --- Career heading subtext --- */
+[data-theme="dark"] .career-heading p {
+    color: #7dd3fc !important;
+}
+
+/* --- Career card / form wrapper --- */
+[data-theme="dark"] .career {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --- Form inputs & textarea --- */
+[data-theme="dark"] .career-form-txt,
+[data-theme="dark"] .career-form-email,
+[data-theme="dark"] .career-form-phone,
+[data-theme="dark"] .career-form-experience,
+[data-theme="dark"] .career-form-txtarea {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .career-form-txt::placeholder,
+[data-theme="dark"] .career-form-email::placeholder,
+[data-theme="dark"] .career-form-phone::placeholder,
+[data-theme="dark"] .career-form-experience::placeholder,
+[data-theme="dark"] .career-form-txtarea::placeholder {
+    color: #475569 !important;
+}
+
+[data-theme="dark"] .career-form-txt:focus,
+[data-theme="dark"] .career-form-email:focus,
+[data-theme="dark"] .career-form-phone:focus,
+[data-theme="dark"] .career-form-experience:focus,
+[data-theme="dark"] .career-form-txtarea:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
+    background: rgba(255, 255, 255, 0.09) !important;
+}
+
+/* --- Radio group heading & option rows --- */
+[data-theme="dark"] .radio-class {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .radio-class .name,
+[data-theme="dark"] .file .name {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .radio {
+    background: #1a2f47 !important;
+    border-color: #334155 !important;
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .radio:hover {
+    border-color: #38bdf8 !important;
+    background: #1e3a5f !important;
+}
+
+[data-theme="dark"] .radio input[type="radio"] {
+    accent-color: #38bdf8 !important;
+}
+
+/* --- File upload --- */
+[data-theme="dark"] .file {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .upload {
+    color: #7dd3fc !important;
+}
+
+/* --- Mobile navbar --- */
+@media (max-width: 1000px) {
+    [data-theme="dark"] .header .navbar {
+        background-color: #1e293b !important;
+        border-top-color: #334155 !important;
+    }
+
+    [data-theme="dark"] .header .navbar ul li a {
+        color: #e2e8f0 !important;
+    }
+}
+
+/* --- Footer (careers page uses careers.css footer) --- */
+[data-theme="dark"] .footer {
+    background: #0d1a2d !important;
+}
+
+[data-theme="dark"] .footer .footer-top {
+    background: #0a1628 !important;
+}
+
+[data-theme="dark"] .footer .footer-contact,
+[data-theme="dark"] .footer .footer-newsletter {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .footer .footer-contact:hover,
+[data-theme="dark"] .footer .footer-newsletter:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}

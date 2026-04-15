@@ -11,7 +11,10 @@ $(document).ready(function(){
 
         if($(window).scrollTop()>35)
         {
-            $('.header').css({'background':'#002e5f','box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
+            // Respect the active theme when applying the scrolled header background
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            var headerBg = isDark ? '#0a1628' : '#002e5f';
+            $('.header').css({'background': headerBg, 'box-shadow':'0 .2rem .5rem rgba(0,0,0,.4)'});
         }
         else
         {
