@@ -1,0 +1,568 @@
+/* ============================================================
+   THEME SYSTEM — Light & Dark mode via CSS custom properties
+   Load order: before style.css in <head>.
+   Dark mode is activated by data-theme="dark" on <html>.
+   All dark-mode element overrides use [data-theme="dark"] prefix
+   for higher specificity than base style.css rules.
+   ============================================================ */
+
+/* ── 1. Light-mode tokens (defaults) ─────────────────────── */
+:root {
+    --clr-bg:               #ffffff;
+    --clr-bg-alt:           #f2f2f2;
+    --clr-bg-card:          #ffffff;
+    --clr-bg-team:          #222222;
+    --clr-bg-testimonial:   #f2f2f2;
+    --clr-bg-accordion:     #ffffff;
+    --clr-bg-contact:       #ffffff;
+    --clr-bg-contact-wrap:  #ffffff;
+    --clr-bg-footer:        #333333;
+    --clr-bg-footer-top:    #002e5f;
+    --clr-bg-navbar-mob:    #ffffff;
+
+    --clr-text:             #333333;
+    --clr-text-heading:     #002e5f;
+    --clr-text-h3:          #000000;
+    --clr-text-card:        #333333;
+    --clr-text-item-h6:     #2f2f2f;
+    --clr-text-muted:       #333333;
+    --clr-text-nav-mob:     #555555;
+
+    --clr-accent:           #002e5f;
+    --clr-border:           rgba(0,0,0,0.07);
+    --clr-border-input:     #bcbcbc;
+
+    --theme-speed:          0.35s;
+}
+
+/* ── 2. Dark-mode token overrides ────────────────────────── */
+[data-theme="dark"] {
+    --clr-bg:               #0f172a;
+    --clr-bg-alt:           #1e293b;
+    --clr-bg-card:          #1e293b;
+    --clr-bg-team:          #0d1a2d;
+    --clr-bg-testimonial:   #1a2540;
+    --clr-bg-accordion:     #1e293b;
+    --clr-bg-contact:       #0f172a;
+    --clr-bg-contact-wrap:  #1e293b;
+    --clr-bg-footer:        #0d1a2d;
+    --clr-bg-footer-top:    #0a1628;
+    --clr-bg-navbar-mob:    #1e293b;
+
+    --clr-text:             #cbd5e1;
+    --clr-text-heading:     #38bdf8;
+    --clr-text-h3:          #e2e8f0;
+    --clr-text-card:        #e2e8f0;
+    --clr-text-item-h6:     #e2e8f0;
+    --clr-text-muted:       #94a3b8;
+    --clr-text-nav-mob:     #e2e8f0;
+
+    --clr-accent:           #38bdf8;
+    --clr-border:           rgba(255,255,255,0.08);
+    --clr-border-input:     #334155;
+}
+
+/* ================================================================
+   3. DARK MODE — COMPREHENSIVE ELEMENT OVERRIDES
+   [data-theme="dark"] prefix gives 0,2,0 specificity vs style.css
+   0,1,0 — so our rules win without touching style.css.
+   !important is only needed for inline style="" attributes.
+   ================================================================ */
+
+/* ── Body ────────────────────────────────────────────────── */
+[data-theme="dark"] body {
+    background-color: #0f172a !important;
+    color: #cbd5e1 !important;
+}
+
+/* ── Section headings & bracket corners ─────────────────── */
+[data-theme="dark"] .heading,
+[data-theme="dark"] .clients .section-header h2,
+[data-theme="dark"] .section-head h1,
+[data-theme="dark"] .testimonials .section-header h2,
+[data-theme="dark"] .section-head-1 h4 {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .heading::before,
+[data-theme="dark"] .heading::after,
+[data-theme="dark"] .clients .section-header h2::before,
+[data-theme="dark"] .clients .section-header h2::after,
+[data-theme="dark"] .section-head h1::before,
+[data-theme="dark"] .section-head h1::after,
+[data-theme="dark"] .testimonials .section-header h2::before,
+[data-theme="dark"] .testimonials .section-header h2::after,
+[data-theme="dark"] .section-head-1 h4::before,
+[data-theme="dark"] .section-head-1 h4::after {
+    border-color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .team .heading,
+[data-theme="dark"] .faq .heading {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .team .heading::before,
+[data-theme="dark"] .team .heading::after,
+[data-theme="dark"] .faq .heading::before,
+[data-theme="dark"] .faq .heading::after {
+    border-color: #38bdf8 !important;
+}
+
+/* ── About section ───────────────────────────────────────── */
+[data-theme="dark"] .about {
+    background-color: #0f172a !important;
+}
+
+[data-theme="dark"] .about .row .content h3 {
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .about .row .content p {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .about .row .content p b {
+    color: #38bdf8 !important;
+}
+
+/* ── Service / Project section wrapper (inline style bg) ── */
+/* Targets both plain wrappers and ones with inline style="" */
+[data-theme="dark"] .pt-5 {
+    background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .pb-5 {
+    background-color: #1e293b !important;
+}
+
+/* Extra rule targeting the inline background-color attribute */
+[data-theme="dark"] [style*="background-color: #f2f2f2"],
+[data-theme="dark"] [style*="background-color:#f2f2f2"] {
+    background-color: #1e293b !important;
+}
+
+/* ── Section description paragraphs ──────────────────────── */
+[data-theme="dark"] .section-head p,
+[data-theme="dark"] .section-head-1 p,
+[data-theme="dark"] .clients .section-header p {
+    color: #94a3b8 !important;
+}
+
+/* ── Service / Project item cards ────────────────────────── */
+[data-theme="dark"] .item {
+    background-color: #1e293b !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .item h6 {
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .item p {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .item:hover {
+    background-image: linear-gradient(to bottom right, #1e3a5f 0%, #1a2f47 100%) !important;
+}
+
+/* ── Communicate / CTA section ───────────────────────────── */
+/* Has background-image so it's always visible — only fix text */
+[data-theme="dark"] .communicate h3,
+[data-theme="dark"] .communicate p {
+    color: #ffffff !important;
+}
+
+/* ── Counters section ────────────────────────────────────── */
+/* Has background-image — only fix text */
+[data-theme="dark"] .counters h3,
+[data-theme="dark"] .counters .counter {
+    color: #ffffff !important;
+}
+
+/* ── Read More button ────────────────────────────────────── */
+[data-theme="dark"] .row .btn {
+    background-color: #1e293b !important;
+    border-color: #38bdf8 !important;
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .row .btn:hover {
+    background-color: #38bdf8 !important;
+    color: #0f172a !important;
+}
+
+/* ── Team section ────────────────────────────────────────── */
+[data-theme="dark"] .team {
+    background-color: #0d1a2d !important;
+}
+
+[data-theme="dark"] .team .row .card {
+    background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .team .row .card .info h3 {
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .team .row .card .info span {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .team .row .card .info .icons a {
+    color: #94a3b8 !important;
+}
+
+/* ── Testimonials ────────────────────────────────────────── */
+[data-theme="dark"] .testimonials {
+    background-color: #1a2540 !important;
+}
+
+[data-theme="dark"] .testimonials .testimonial-item {
+    background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .testimonials .testimonial-text {
+    background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .testimonials .testimonial-text h3,
+[data-theme="dark"] .testimonials .testimonial-text h4,
+[data-theme="dark"] .testimonials .testimonial-text p {
+    color: #cbd5e1 !important;
+}
+
+/* ── Clients section ─────────────────────────────────────── */
+[data-theme="dark"] .clients {
+    background-color: #0f172a !important;
+}
+
+/* ── FAQ section ─────────────────────────────────────────── */
+/* FAQ has a background-image; just fix the accordion cards */
+[data-theme="dark"] .faq .row .accordion-container .accordion .accordion-body {
+    background-color: #1e293b !important;
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .faq .row .accordion-container .accordion .accordion-header {
+    background-color: #0e3460 !important;
+}
+
+[data-theme="dark"] .faq .row .accordion-container .accordion .accordion-header h3 {
+    color: #e2e8f0 !important;
+}
+
+/* ── Contact section ─────────────────────────────────────── */
+[data-theme="dark"] .contact {
+    background-color: #0f172a !important;
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .contact .heading {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .contact-in {
+    background: #1e293b !important;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .contact-form-txt,
+[data-theme="dark"] .contact-form-email,
+[data-theme="dark"] .contact-form-phone,
+[data-theme="dark"] .contact-form-txtarea {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .contact-form-txt::placeholder,
+[data-theme="dark"] .contact-form-email::placeholder,
+[data-theme="dark"] .contact-form-phone::placeholder,
+[data-theme="dark"] .contact-form-txtarea::placeholder {
+    color: #475569 !important;
+}
+
+[data-theme="dark"] .contact-form-btn {
+    background: #1e293b !important;
+    border-color: #38bdf8 !important;
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .contact-form-btn:hover {
+    background: #38bdf8 !important;
+    color: #0f172a !important;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+[data-theme="dark"] .footer {
+    background: #0d1a2d !important;
+}
+
+[data-theme="dark"] .footer .footer-top {
+    background: #0a1628 !important;
+}
+
+/* ── Mobile / responsive navbar ──────────────────────────── */
+@media (max-width: 1000px) {
+    [data-theme="dark"] .header .navbar {
+        background-color: #1e293b !important;
+        border-top-color: #334155 !important;
+    }
+
+    [data-theme="dark"] .header .navbar ul li a {
+        color: #e2e8f0 !important;
+    }
+}
+
+/* ── Hero section waves (index.html) ────────────────────── */
+/*
+ * Strategy:
+ * 1. CSS filter chain colorizes the white wave PNG → dark teal-blue.
+ *    brightness(0)  → pure black
+ *    invert(0.18)   → lifts 0→46 (dark grey, gives the filter something to work with)
+ *    sepia(1)       → brownish dark grey (adds separate R/G/B channels)
+ *    saturate(700%) → pushes saturation high so hue-rotate has material to shift
+ *    hue-rotate(163deg) → rotates orange-brown → teal-blue range
+ *    brightness(0.45)   → darkens final result to match dark background
+ *
+ * 2. .home::after gradient overlay fades the hero base smoothly
+ *    into the dark body background — opacity: 0 in light mode,
+ *    opacity: 1 in dark mode with a CSS transition.
+ */
+
+/* Smooth transitions for the waves and overlay */
+.home .wave {
+    transition: filter 0.5s ease, opacity 0.5s ease !important;
+}
+
+.home::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 14rem;
+    z-index: 4;
+    pointer-events: none;
+    /* Same gradient in both modes; opacity controls visibility */
+    background: linear-gradient(
+        to bottom,
+        transparent         0%,
+        rgba(15, 23, 42, 0.55) 45%,
+        rgba(15, 23, 42, 0.85) 70%,
+        #0f172a             100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease !important;
+}
+
+/* Dark mode: tint waves teal-blue and reveal the gradient overlay */
+[data-theme="dark"] .home .wave {
+    filter:
+        brightness(0)
+        invert(0.18)
+        sepia(1)
+        saturate(700%)
+        hue-rotate(163deg)
+        brightness(0.45);
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .home::after {
+    opacity: 1;
+}
+
+/* ── Generic "white background" catch-all ─────────────────── */
+/* Makes sure any missed container with an explicit white bg goes dark */
+[data-theme="dark"] [style*="background-color: #fff"],
+[data-theme="dark"] [style*="background-color:#fff"],
+[data-theme="dark"] [style*="background-color: white"],
+[data-theme="dark"] [style*="background: white"],
+[data-theme="dark"] [style*="background:#fff"] {
+    background-color: #1e293b !important;
+    background: #1e293b !important;
+}
+
+
+/* ================================================================
+   4. SMOOTH COLOUR TRANSITIONS
+   style.css already has * { transition: all .2s linear } globally,
+   so all colour changes animate automatically.
+   We just extend the duration for the theme switch.
+   ================================================================ */
+body,
+.about,
+.item,
+.team,
+.team .row .card,
+.testimonials,
+.testimonials .testimonial-item,
+.testimonials .testimonial-text,
+.clients,
+.faq .accordion-body,
+.contact,
+.contact-in,
+.footer,
+.footer .footer-top,
+.contact-form-txt,
+.contact-form-email,
+.contact-form-phone,
+.contact-form-txtarea,
+.contact-form-btn,
+.row .btn,
+.pt-5,
+.pb-5 {
+    transition:
+        background-color var(--theme-speed) ease,
+        background      var(--theme-speed) ease,
+        color           var(--theme-speed) ease,
+        border-color    var(--theme-speed) ease,
+        box-shadow      var(--theme-speed) ease !important;
+}
+
+/* ================================================================
+   5. ANIMATED THEME TOGGLE BUTTON
+   ================================================================ */
+
+/* Wrapper in the header */
+.theme-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 1.2rem;
+    flex-shrink: 0;
+    z-index: 200;
+}
+
+/* Label acts as the interactive zone */
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Hide the actual checkbox */
+.theme-toggle input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* ── The pill-shaped track ── */
+.toggle-track {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 6.4rem;
+    height: 3.2rem;
+    border-radius: 3.2rem;
+    padding: 0 0.55rem;
+    position: relative;
+    cursor: pointer;
+    /* Dark mode track — default (matches dark-mode = checkbox checked) */
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f2544 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition:
+        background var(--theme-speed) ease,
+        box-shadow  var(--theme-speed) ease;
+}
+
+/* Light mode track (checkbox UNchecked = light theme) */
+.theme-toggle input:not(:checked) + .toggle-track {
+    background: linear-gradient(135deg, #87ceeb 0%, #ffe566 100%);
+    box-shadow: 0 2px 8px rgba(255, 200, 50, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Sun icon */
+.toggle-track .icon-sun {
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #ffe566;
+    text-shadow: 0 0 6px rgba(255, 220, 0, 0.9);
+    user-select: none;
+    transition: opacity var(--theme-speed) ease, transform var(--theme-speed) ease;
+}
+
+/* Moon icon */
+.toggle-track .icon-moon {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #e2e8f0;
+    user-select: none;
+    transition: opacity var(--theme-speed) ease, transform var(--theme-speed) ease;
+}
+
+/* ── Sliding knob ── */
+.toggle-knob {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Emoji face on the knob — sun by default (light mode) */
+.toggle-knob::after {
+    content: '☀️';
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* Checked = dark mode → knob slides right, shows moon */
+.theme-toggle input:checked + .toggle-track .toggle-knob {
+    transform: translateX(3.2rem);
+}
+
+.theme-toggle input:checked + .toggle-track .toggle-knob::after {
+    content: '🌙';
+}
+
+/* Hover glow */
+.theme-toggle:hover .toggle-track {
+    box-shadow: 0 4px 14px rgba(0, 191, 255, 0.35), inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus ring (keyboard accessibility) */
+.theme-toggle input:focus-visible + .toggle-track {
+    outline: 2px solid #00bfff;
+    outline-offset: 3px;
+}
+
+/* Click pulse animation */
+@keyframes togglePulse {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.5); }
+    70%  { box-shadow: 0 0 0 10px rgba(0, 191, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 191, 255, 0); }
+}
+
+.theme-toggle.pulse .toggle-track {
+    animation: togglePulse 0.5s ease-out;
+}
+
+/* ── Header layout adjustments ── */
+.header {
+    gap: 0.8rem;
+}
+
+@media (max-width: 1000px) {
+    .header {
+        flex-wrap: nowrap;
+    }
+
+    .theme-toggle-wrapper {
+        margin-left: auto;
+        margin-right: 0.5rem;
+        order: 3;
+    }
+}
