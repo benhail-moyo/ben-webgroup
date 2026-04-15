@@ -1,35 +1,43 @@
+/* ===== GOOGLE FONTS IMPORT ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 
+/* ===== GLOBAL RESET & BASE STYLES ===== */
+/* Applies consistent defaults to all elements */
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-transform: capitalize;
-    transition: all .2s linear;
+    transition: all .2s linear; /* Smooth transition for all property changes */
     text-decoration: none;
 }
 
+/* Sets base font size to 10px so 1rem = 10px for easy scaling */
 html{
     font-size: 62.5%;
 }
 
+/* Prevents horizontal scrollbar from appearing */
 body{
     overflow-x: hidden;
 }
 
+/* ===== HEADER ===== */
+/* Fixed top navigation bar spanning full width */
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 1rem 2rem;
-    position: fixed;
+    position: fixed; /* Stays at top while scrolling */
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 100; /* Sits above most page content */
 }
 
+/* Logo image sizing within the header */
 .header .logo img{
     width: 20%;
     height: 3rem;
@@ -37,6 +45,7 @@ body{
     left: 0;
 }
 
+/* Horizontal navigation list layout */
 .header .navbar ul{
     list-style-type: none;
     display: flex;
@@ -44,24 +53,29 @@ body{
     justify-content: space-around;
 }
 
+/* Spacing between nav items */
 .header .navbar ul li{
     margin: 0 1.5rem;
 }
 
+/* Nav link default style — white text */
 .header .navbar ul li a{
     font-size: 2rem;
     color: #fff;
 }
 
+/* Nav link hover — highlight blue with underline */
 .header .navbar ul li a:hover{
     color: #00bfff;
     text-decoration: underline;
 }
 
+/* Logo icon padding */
 .header .logo i{
     padding: 0.5rem;
 }
 
+/* Hamburger menu icon — hidden on desktop, shown on mobile */
 .header .fa-bars{
     color: #fff;
     cursor: pointer;
@@ -69,6 +83,8 @@ body{
     display: none;
 }
 
+/* ===== HERO / HOME SECTION ===== */
+/* Full-width hero section with background image */
 .home{
     min-height: 70vh;
     width: 100vw;
@@ -86,30 +102,36 @@ body{
     overflow: hidden !important;
 }
 
+/* Hero heading text */
 .home h2{
     color: #fff;
     font-size: 5.5rem;
 }
 
+/* ===== CAREER SECTION HEADING ===== */
+/* Centered heading container */
 .career-heading{
     text-align: center;
 }
 
+/* Section title with decorative bracket corners using pseudo-elements */
 .heading{
     padding-top: 6rem;
     display: inline-block;
     font-size: 3.5rem;
     color: #002e5f;
-    position: relative;
+    position: relative; /* Needed for ::before and ::after positioning */
     letter-spacing: .2rem;
     margin: -2rem auto 2rem auto;
 }
 
+/* Subtext below section heading */
 .career-heading p{
     font-size: 2rem;
     color: #333;
 }
 
+/* Shared styles for top-left and bottom-right corner brackets */
 .heading::before,
 .heading::after{
     content: '';
@@ -120,36 +142,41 @@ body{
     border-left: .4rem solid #002e5f;
 }
 
+/* Top-left corner bracket */
 .heading::before{
     top: 5.8rem;
     left: -2rem;
 }
 
+/* Bottom-right corner bracket — rotated 180deg to flip orientation */
 .heading::after{
     bottom: -.5rem;
     right: -2rem;
     transform: rotate(180deg);
 }
 
-/* ===== PROFESSIONAL CAREER FORM ===== */
-
+/* ===== CAREER FORM CONTAINER ===== */
+/* Glassmorphism-style card centered on the page */
 .career{
-    width: min(900px, 92%);
+    width: min(900px, 92%); /* Responsive: max 900px, shrinks on small screens */
     margin: 6rem auto;
     padding: 3rem;
     border-radius: 24px;
-    background: rgba(17, 24, 39, 0.88);
+    background: rgba(17, 24, 39, 0.88); /* Dark semi-transparent background */
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); /* Frosted glass blur effect */
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
 }
 
+/* Full-width left-aligned form layout */
 .career-form{
     width: 100%;
     text-align: left;
 }
 
+/* ===== FORM INPUT FIELDS ===== */
+/* Shared styles for all text, email, phone, experience inputs and textarea */
 .career-form-txt,
 .career-form-email,
 .career-form-phone,
@@ -160,13 +187,14 @@ body{
     padding: 1.4rem 1.6rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05); /* Subtle transparent white background */
     color: #ffffff;
     font-size: 1.5rem;
     outline: none;
     box-shadow: none;
 }
 
+/* Fixed height for single-line inputs */
 .career-form-txt,
 .career-form-email,
 .career-form-phone,
@@ -174,6 +202,7 @@ body{
     height: 5rem;
 }
 
+/* Textarea — taller with vertical resize only */
 .career-form-txtarea{
     min-height: 15rem;
     resize: vertical;
@@ -181,6 +210,7 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+/* Placeholder text styling for all inputs */
 .career-form-txt::placeholder,
 .career-form-email::placeholder,
 .career-form-phone::placeholder,
@@ -190,6 +220,7 @@ body{
     font-size: 1.5rem;
 }
 
+/* Hover state — brighter border and slightly more opaque background */
 .career-form-txt:hover,
 .career-form-email:hover,
 .career-form-phone:hover,
@@ -199,6 +230,7 @@ body{
     background: rgba(255, 255, 255, 0.382);
 }
 
+/* Focus state — blue glow outline and near-white background */
 .career-form-txt:focus,
 .career-form-email:focus,
 .career-form-phone:focus,
@@ -206,9 +238,11 @@ body{
 .career-form-txtarea:focus{
     border-color: #00bfff;
     background: rgba(255, 255, 255, 0.778);
-    box-shadow: 0 0 0 4px rgba(0, 191, 255, 0.381);
+    box-shadow: 0 0 0 4px rgba(0, 191, 255, 0.381); /* Blue ring on focus */
 }
 
+/* ===== RADIO BUTTON GROUP ===== */
+/* Container for labeled radio options */
 .radio-class{
     width: 100%;
     margin: 0 0 2rem 0;
@@ -217,6 +251,7 @@ body{
     color: #ffffff;
 }
 
+/* Label above radio group and file upload */
 .radio-class .name,
 .file .name{
     display: block;
@@ -226,17 +261,12 @@ body{
     margin-bottom: 1.2rem;
 }
 
-.radio-group{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    gap: 1.2rem;
-}
-
+/* Individual radio option row — pill-shaped card */
 .radio{
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin: 0;
+    margin: 0 0 1rem 0;
     padding: 1.2rem 1.4rem;
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.145);
@@ -246,16 +276,19 @@ body{
     cursor: pointer;
 }
 
+/* Radio option hover — blue border highlight */
 .radio:hover{
     border-color: #00bfff;
     background: rgba(255, 255, 255, 0.08);
 }
 
+/* Accent color for radio input dot */
 .radio input[type="radio"]{
     accent-color: #00bfff;
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slightly enlarged for visibility */
 }
 
+/* ===== FILE UPLOAD FIELD ===== */
 .file{
     width: 100%;
     margin: 0 0 2rem 0;
@@ -264,6 +297,7 @@ body{
     color: #ffffff;
 }
 
+/* Helper text shown below file input */
 .upload{
     display: block;
     margin-top: 0.8rem;
@@ -271,6 +305,8 @@ body{
     color: #d1d5db;
 }
 
+/* ===== SUBMIT BUTTON ===== */
+/* Full-width gradient pill button */
 .career-form-btn{
     display: inline-flex;
     align-items: center;
@@ -280,8 +316,8 @@ body{
     margin: 1rem 0 0 0;
     padding: 0 2rem;
     border: none;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #00bfff, #385779);
+    border-radius: 999px; /* Fully rounded pill shape */
+    background: linear-gradient(135deg, #00bfff, #385779); /* Blue gradient */
     color: #ffffff;
     font-size: 1.6rem;
     font-weight: 600;
@@ -290,26 +326,32 @@ body{
     box-shadow: 0 12px 28px rgba(0, 46, 95, 0.35);
 }
 
+/* Button hover — lifts up with deeper shadow */
 .career-form-btn:hover{
     transform: translateY(-2px);
     box-shadow: 0 18px 35px rgba(0, 46, 95, 0.45);
 }
 
+/* Button active/click — snaps back to original position */
 .career-form-btn:active{
     transform: translateY(0);
 }
 
+/* ===== FOOTER ===== */
+/* Outer footer wrapper with semi-transparent blue tint */
 .footer{
     position: relative;
     padding: 0 0 30px 0;
     background: #3385ff96;
 }
 
+/* Top section of footer with darker solid background */
 .footer .footer-top{
     background: #245b96;
     padding: 60px 0 30px 0;
 }
 
+/* Footer column spacing */
 .footer .footer-top .footer-info,
 .footer .footer-top .footer-links,
 .footer .footer-top .footer-contact,
@@ -317,6 +359,7 @@ body{
     margin-bottom: 30px;
 }
 
+/* Social media icon buttons */
 .footer .footer-top .social-links a{
     font-size: 18px;
     display: inline-block;
@@ -331,11 +374,13 @@ body{
     transition: 0.3s;
 }
 
+/* Social icon hover — invert colors */
 .footer .footer-top .social-links a:hover{
     background: #00bfff;
     color: #ffffff;
 }
 
+/* Footer column headings */
 .footer .footer-top h4{
     font-size: 16px;
     font-weight: 700;
@@ -347,6 +392,7 @@ body{
     letter-spacing: 1px;
 }
 
+/* Underline accent below footer headings */
 .footer .footer-top h4::before{
     content: '';
     position: absolute;
@@ -357,82 +403,115 @@ body{
     border-bottom: 2px solid #ffffff;
 }
 
+/* Footer navigation list reset */
 .footer .footer-top .footer-links ul{
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+/* Arrow icons beside footer links */
 .footer .footer-top .footer-links ul i{
     padding-right: 8px;
     color: #ffffff;
     font-size: 16px;
 }
 
+/* Divider line between footer link items */
 .footer .footer-top .footer-links ul li{
     border-bottom: 1px solid #ffffff;
     padding: 7px 0;
 }
 
+/* Remove top padding from first list item */
 .footer .footer-top .footer-links ul li:first-child{
     padding-top: 0;
 }
 
+/* Footer link default — white text */
 .footer .footer-top .footer-links ul a{
     font-size: 14px;
     color: #ffffff;
 }
 
+/* Footer link hover — blue highlight */
 .footer .footer-top .footer-links ul a:hover{
     color: #00bfff;
 }
 
+/* Contact info paragraph text */
 .footer .footer-top .footer-contact p{
     color: #ffffff;
     line-height: 26px;
 }
 
-.footer .footer-top .footer-newsletter input[type="email"]{
-    padding: 6px 8px;
-    width: 60%;
-    border: 1px solid #ffffff;
-    background: transparent;
-    color: #ffffff;
-}
-
-.footer .footer-top .footer-newsletter input[type="submit"]{
-    border: 0;
-    width: 40%;
-    padding: 6px 0;
-    text-align: center;
-    color: black;
-    border: 1px solid #ffffff;
-    background: #ffffff;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.footer .footer-top .footer-newsletter input[type="submit"]:hover{
-    color: #ffffff;
-    background: #00bfff;
-    border: 1px solid #00bfff;
-    letter-spacing: .2rem;
-}
-
+/* Newsletter description text */
 .footer .footer-top .footer-newsletter p{
     color: #ffffff;
     font-size: 14px;
 }
 
+/* ===== NEWSLETTER FORM ===== */
+/* Side-by-side email input + submit button layout */
+.footer .footer-newsletter form{
+    display: flex;
+    width: 100%;
+    margin-top: 1.5rem;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+/* Email input — stretches to fill available space */
+.footer .footer-newsletter input[type="email"]{
+    flex: 1;
+    min-width: 0; /* Prevents overflow in flex container */
+    padding: 10px 12px;
+    border: 1px solid #ffffff;
+    border-right: none; /* Seamlessly connects to submit button */
+    border-radius: 8px 0 0 8px;
+    background: transparent;
+    color: #ffffff;
+    outline: none;
+}
+
+/* Placeholder text for email input */
+.footer .footer-newsletter input[type="email"]::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Subscribe button — attached to right side of input */
+.footer .footer-newsletter input[type="submit"]{
+    padding: 10px 16px;
+    border: 1px solid #ffffff;
+    border-radius: 0 8px 8px 0;
+    background: #ffffff;
+    color: black;
+    transition: 0.3s;
+    cursor: pointer;
+    white-space: nowrap; /* Prevents button text from wrapping */
+    flex-shrink: 0;
+}
+
+/* Subscribe button hover — blue fill */
+.footer .footer-top .footer-newsletter input[type="submit"]:hover{
+    color: #ffffff;
+    background: #00bfff;
+    border: 1px solid #00bfff;
+    letter-spacing: .1rem;
+}
+
+/* ===== FOOTER BOTTOM BAR ===== */
 .footer .credit,
 .footer .copyright{
     text-align: center;
     padding-top: 30px;
 }
 
+/* ===== BACK TO TOP BUTTON ===== */
+/* Fixed floating button in bottom-right corner */
 .back-to-top{
     position: fixed;
-    display: none;
+    display: none; /* Hidden until user scrolls down (shown via JS) */
     background-color: #5271b5;
     color: #ffffff;
     width: 45px;
@@ -450,10 +529,13 @@ body{
     color: #ffffff;
 }
 
+/* Back-to-top icon hover color */
 .back-to-top i:hover{
     color: rgb(58, 53, 146);
 }
 
+/* ===== RESPONSIVE: TABLET & ABOVE (768px+) ===== */
+/* Align footer credit/copyright to opposite sides */
 @media (min-width: 768px){
     .footer .credit{
         text-align: right;
@@ -464,7 +546,9 @@ body{
     }
 }
 
+/* ===== RESPONSIVE: TABLET & BELOW (max 1000px) ===== */
 @media (max-width: 1000px){
+    /* Slightly reduce base font size for smaller screens */
     html{
         font-size: 50%;
     }
@@ -477,6 +561,7 @@ body{
         background-size: cover;
     }
 
+    /* Show hamburger icon on mobile */
     .header .fa-bars{
         display: block;
         color: white;
@@ -486,9 +571,10 @@ body{
         color: #00bfff;
     }
 
+    /* Mobile nav — hidden above viewport by default, toggled via JS */
     .header .navbar{
         position: fixed;
-        top: -120%;
+        top: -120%; /* Off-screen by default */
         left: 0;
         height: auto;
         width: 100%;
@@ -497,6 +583,7 @@ body{
         border-top: .1rem solid rgba(0,0,0,.3);
     }
 
+    /* Stack nav links vertically on mobile */
     .header .navbar ul{
         height: 100%;
         width: 100%;
@@ -507,19 +594,23 @@ body{
         margin: 1rem 0;
     }
 
+    /* Darker nav link color on white mobile menu */
     .header .navbar ul li a{
         color: grey;
         font-size: 2.4rem;
     }
 
+    /* Rotate close icon for visual effect */
     .header .fa-times{
         transform: rotate(90deg);
     }
 
+    /* Position open nav below header */
     .header .nav-toggle{
         top: 5.8rem;
     }
 
+    /* Reduce hero height on smaller screens */
     .home{
         min-height: 60vh;
     }
@@ -529,12 +620,14 @@ body{
         font-size: 4rem;
     }
 
+    /* Smaller back-to-top button on mobile */
     .back-to-top{
         width: 30px;
         height: 30px;
         font-size: 30px;
     }
 
+    /* Adjust career form card for mobile — lighter background */
     .career{
         width: 94%;
         padding: 2rem 1.4rem;
@@ -542,15 +635,12 @@ body{
         background: rgba(93, 129, 207, 0.88);
     }
 
-    .radio-group{
-        grid-template-columns: 1fr;
-    }
-
     .career-form-btn{
         width: 100%;
     }
 }
 
+/* ===== RESPONSIVE: MOBILE (max 768px) ===== */
 @media (max-width: 768px){
     .career{
         width: 94%;
@@ -558,55 +648,62 @@ body{
         border-radius: 18px;
     }
 
-    .radio-group{
-        grid-template-columns: 1fr;
-    }
-
     .career-form-btn{
         width: 100%;
     }
+
+    /* Stack newsletter form vertically on small screens */
+    .footer .footer-newsletter form{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Full-width email input on mobile — restore all borders */
+    .footer .footer-newsletter input[type="email"]{
+        width: 100%;
+        border-right: 1px solid #ffffff;
+        border-radius: 8px;
+    }
+
+    /* Full-width submit button on mobile */
+    .footer .footer-newsletter input[type="submit"]{
+        width: 100%;
+        border-radius: 8px;
+    }
 }
 
-
-
+/* ===== FOOTER CONTACT & NEWSLETTER CARD STYLES ===== */
+/* Glassmorphism card effect for contact and newsletter blocks */
 .footer .footer-contact,
-.footer .footer-newsletter {
+.footer .footer-newsletter{
     background: rgba(255, 255, 255, 0.06);
     padding: 2rem;
     border-radius: 16px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); /* Frosted glass effect */
     border: 1px solid rgba(255,255,255,0.1);
     transition: 0.3s;
 }
 
-
+/* Card hover — lifts with shadow */
 .footer .footer-contact:hover,
-.footer .footer-newsletter:hover {
+.footer .footer-newsletter:hover{
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.footer .row {
+/* Row gap between footer columns */
+.footer .row{
     gap: 20px;
 }
 
-.footer .footer-contact p {
+/* Contact paragraph sizing */
+.footer .footer-contact p{
     font-size: 1.4rem;
     line-height: 2.2rem;
 }
 
-.footer .footer-newsletter p {
+/* Newsletter paragraph sizing */
+.footer .footer-newsletter p{
     font-size: 1.4rem;
     line-height: 2.2rem;
-}
-
-
-
-.footer .footer-newsletter input[type="email"] {
-    border-radius: 8px 0 0 8px;
-    padding: 10px;
-}
-
-.footer .footer-newsletter input[type="submit"] {
-    border-radius: 0 8px 8px 0;
 }
