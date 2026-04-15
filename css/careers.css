@@ -119,16 +119,16 @@ body{
     padding-top: 6rem;
     display: inline-block;
     font-size: 3.5rem;
-    color: #002e5f;
+    color: #0c447c; /* Updated: dark navy blue for light mode readability */
     position: relative; /* Needed for ::before and ::after positioning */
     letter-spacing: .2rem;
     margin: -2rem auto 2rem auto;
 }
 
-/* Subtext below section heading */
+/* Subtext below section heading — updated to blue for light mode */
 .career-heading p{
     font-size: 2rem;
-    color: #333;
+    color: #185fa5;
 }
 
 /* Shared styles for top-left and bottom-right corner brackets */
@@ -138,8 +138,8 @@ body{
     position: absolute;
     height: 2.5rem;
     width: 2.5rem;
-    border-top: .4rem solid #002e5f;
-    border-left: .4rem solid #002e5f;
+    border-top: .4rem solid #0c447c; /* Updated: matches new heading color */
+    border-left: .4rem solid #0c447c;
 }
 
 /* Top-left corner bracket */
@@ -156,17 +156,17 @@ body{
 }
 
 /* ===== CAREER FORM CONTAINER ===== */
-/* Glassmorphism-style card centered on the page */
+/* Light mode card — soft blue-white surface with blue border */
 .career{
     width: min(900px, 92%); /* Responsive: max 900px, shrinks on small screens */
     margin: 6rem auto;
     padding: 3rem;
     border-radius: 24px;
-    background: rgba(17, 24, 39, 0.88); /* Dark semi-transparent background */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(12px); /* Frosted glass blur effect */
-    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    background: #f0f6ff; /* Light blue-white background */
+    border: 1px solid #b5d4f4; /* Soft blue border */
+    box-shadow: 0 8px 32px rgba(24, 95, 165, 0.10); /* Subtle blue-tinted shadow */
+    backdrop-filter: none; /* Removed: not needed for light mode */
+    -webkit-backdrop-filter: none;
 }
 
 /* Full-width left-aligned form layout */
@@ -185,10 +185,10 @@ body{
     width: 100%;
     margin: 0 0 1.8rem 0;
     padding: 1.4rem 1.6rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid #b5d4f4; /* Soft blue border */
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.05); /* Subtle transparent white background */
-    color: #ffffff;
+    background: #ffffff; /* Clean white background */
+    color: #042c53; /* Deep navy text for strong readability */
     font-size: 1.5rem;
     outline: none;
     box-shadow: none;
@@ -210,35 +210,35 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-/* Placeholder text styling for all inputs */
+/* Placeholder text — muted blue tone */
 .career-form-txt::placeholder,
 .career-form-email::placeholder,
 .career-form-phone::placeholder,
 .career-form-experience::placeholder,
 .career-form-txtarea::placeholder{
-    color: rgba(255, 255, 255, 0.6);
+    color: #7aaad4; /* Muted blue for placeholder text */
     font-size: 1.5rem;
 }
 
-/* Hover state — brighter border and slightly more opaque background */
+/* Hover state — stronger blue border */
 .career-form-txt:hover,
 .career-form-email:hover,
 .career-form-phone:hover,
 .career-form-experience:hover,
 .career-form-txtarea:hover{
-    border-color: #ffffff;
-    background: rgba(255, 255, 255, 0.382);
+    border-color: #378add; /* Brighter blue on hover */
+    background: #ffffff;
 }
 
-/* Focus state — blue glow outline and near-white background */
+/* Focus state — deeper blue border with blue glow ring */
 .career-form-txt:focus,
 .career-form-email:focus,
 .career-form-phone:focus,
 .career-form-experience:focus,
 .career-form-txtarea:focus{
-    border-color: #00bfff;
-    background: rgba(255, 255, 255, 0.778);
-    box-shadow: 0 0 0 4px rgba(0, 191, 255, 0.381); /* Blue ring on focus */
+    border-color: #185fa5; /* Dark blue on focus */
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.18); /* Subtle blue glow ring */
 }
 
 /* ===== RADIO BUTTON GROUP ===== */
@@ -248,20 +248,20 @@ body{
     margin: 0 0 2rem 0;
     padding: 0;
     height: auto;
-    color: #ffffff;
+    color: #042c53; /* Deep navy text */
 }
 
-/* Label above radio group and file upload */
+/* Label above radio group and file upload — dark navy */
 .radio-class .name,
 .file .name{
     display: block;
     font-size: 2rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #0c447c; /* Navy blue heading */
     margin-bottom: 1.2rem;
 }
 
-/* Individual radio option row — pill-shaped card */
+/* Individual radio option row — light blue card */
 .radio{
     display: flex;
     align-items: center;
@@ -269,22 +269,22 @@ body{
     margin: 0 0 1rem 0;
     padding: 1.2rem 1.4rem;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.145);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #f3f4f6;
+    background: #e6f1fb; /* Light blue background */
+    border: 1px solid #b5d4f4; /* Soft blue border */
+    color: #185fa5; /* Medium blue text */
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-/* Radio option hover — blue border highlight */
+/* Radio option hover — slightly deeper blue border */
 .radio:hover{
-    border-color: #00bfff;
-    background: rgba(255, 255, 255, 0.08);
+    border-color: #378add;
+    background: #d0e8f8; /* Slightly deeper light blue */
 }
 
 /* Accent color for radio input dot */
 .radio input[type="radio"]{
-    accent-color: #00bfff;
+    accent-color: #378add; /* Blue radio dot */
     transform: scale(1.1); /* Slightly enlarged for visibility */
 }
 
@@ -294,7 +294,7 @@ body{
     margin: 0 0 2rem 0;
     padding: 0;
     height: auto;
-    color: #ffffff;
+    color: #042c53;
 }
 
 /* Helper text shown below file input */
@@ -302,11 +302,11 @@ body{
     display: block;
     margin-top: 0.8rem;
     font-size: 1.4rem;
-    color: #d1d5db;
+    color: #185fa5; /* Medium blue helper text */
 }
 
 /* ===== SUBMIT BUTTON ===== */
-/* Full-width gradient pill button */
+/* Full-width solid navy blue pill button */
 .career-form-btn{
     display: inline-flex;
     align-items: center;
@@ -317,19 +317,19 @@ body{
     padding: 0 2rem;
     border: none;
     border-radius: 999px; /* Fully rounded pill shape */
-    background: linear-gradient(135deg, #00bfff, #385779); /* Blue gradient */
+    background: linear-gradient(135deg, #185fa5, #0c447c); /* Navy blue gradient */
     color: #ffffff;
     font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 0.02rem;
     cursor: pointer;
-    box-shadow: 0 12px 28px rgba(0, 46, 95, 0.35);
+    box-shadow: 0 8px 20px rgba(12, 68, 124, 0.25); /* Soft blue shadow */
 }
 
 /* Button hover — lifts up with deeper shadow */
 .career-form-btn:hover{
     transform: translateY(-2px);
-    box-shadow: 0 18px 35px rgba(0, 46, 95, 0.45);
+    box-shadow: 0 14px 28px rgba(12, 68, 124, 0.35);
 }
 
 /* Button active/click — snaps back to original position */
@@ -338,16 +338,16 @@ body{
 }
 
 /* ===== FOOTER ===== */
-/* Outer footer wrapper with semi-transparent blue tint */
+/* Outer footer wrapper */
 .footer{
     position: relative;
     padding: 0 0 30px 0;
-    background: #3385ff96;
+    background: #e6f1fb; /* Light blue footer background */
 }
 
-/* Top section of footer with darker solid background */
+/* Top section of footer with solid navy background */
 .footer .footer-top{
-    background: #245b96;
+    background: #0c447c; /* Deep navy — provides contrast for white text */
     padding: 60px 0 30px 0;
 }
 
@@ -364,7 +364,7 @@ body{
     font-size: 18px;
     display: inline-block;
     background: #ffffff;
-    color: #00bfff;
+    color: #185fa5; /* Blue icon color */
     line-height: 1;
     padding: 9px 0;
     margin-right: 4px;
@@ -374,9 +374,9 @@ body{
     transition: 0.3s;
 }
 
-/* Social icon hover — invert colors */
+/* Social icon hover — invert to blue background */
 .footer .footer-top .social-links a:hover{
-    background: #00bfff;
+    background: #378add;
     color: #ffffff;
 }
 
@@ -400,7 +400,7 @@ body{
     bottom: 0;
     height: 0;
     width: 50px;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #85b7eb; /* Light blue accent line */
 }
 
 /* Footer navigation list reset */
@@ -413,13 +413,13 @@ body{
 /* Arrow icons beside footer links */
 .footer .footer-top .footer-links ul i{
     padding-right: 8px;
-    color: #ffffff;
+    color: #85b7eb; /* Lighter blue for icons */
     font-size: 16px;
 }
 
 /* Divider line between footer link items */
 .footer .footer-top .footer-links ul li{
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Subtle white divider */
     padding: 7px 0;
 }
 
@@ -434,20 +434,20 @@ body{
     color: #ffffff;
 }
 
-/* Footer link hover — blue highlight */
+/* Footer link hover — light blue highlight */
 .footer .footer-top .footer-links ul a:hover{
-    color: #00bfff;
+    color: #85b7eb;
 }
 
 /* Contact info paragraph text */
 .footer .footer-top .footer-contact p{
-    color: #ffffff;
+    color: #e6f1fb; /* Very light blue-white text */
     line-height: 26px;
 }
 
 /* Newsletter description text */
 .footer .footer-top .footer-newsletter p{
-    color: #ffffff;
+    color: #e6f1fb;
     font-size: 14px;
 }
 
@@ -466,37 +466,36 @@ body{
     flex: 1;
     min-width: 0; /* Prevents overflow in flex container */
     padding: 10px 12px;
-    border: 1px solid #ffffff;
+    border: 1px solid #85b7eb; /* Light blue border */
     border-right: none; /* Seamlessly connects to submit button */
     border-radius: 8px 0 0 8px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.08); /* Subtle white tint */
     color: #ffffff;
     outline: none;
 }
 
 /* Placeholder text for email input */
 .footer .footer-newsletter input[type="email"]::placeholder{
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 /* Subscribe button — attached to right side of input */
 .footer .footer-newsletter input[type="submit"]{
     padding: 10px 16px;
-    border: 1px solid #ffffff;
+    border: 1px solid #85b7eb;
     border-radius: 0 8px 8px 0;
-    background: #ffffff;
-    color: black;
+    background: #378add; /* Medium blue button */
+    color: #ffffff;
     transition: 0.3s;
     cursor: pointer;
     white-space: nowrap; /* Prevents button text from wrapping */
     flex-shrink: 0;
 }
 
-/* Subscribe button hover — blue fill */
+/* Subscribe button hover — deeper navy */
 .footer .footer-top .footer-newsletter input[type="submit"]:hover{
-    color: #ffffff;
-    background: #00bfff;
-    border: 1px solid #00bfff;
+    background: #185fa5;
+    border: 1px solid #185fa5;
     letter-spacing: .1rem;
 }
 
@@ -512,7 +511,7 @@ body{
 .back-to-top{
     position: fixed;
     display: none; /* Hidden until user scrolls down (shown via JS) */
-    background-color: #5271b5;
+    background-color: #185fa5; /* Medium navy blue */
     color: #ffffff;
     width: 45px;
     height: 45px;
@@ -531,7 +530,7 @@ body{
 
 /* Back-to-top icon hover color */
 .back-to-top i:hover{
-    color: rgb(58, 53, 146);
+    color: #b5d4f4; /* Light blue on hover */
 }
 
 /* ===== RESPONSIVE: TABLET & ABOVE (768px+) ===== */
@@ -540,7 +539,7 @@ body{
     .footer .credit{
         text-align: right;
     }
-    
+
     .footer .copyright{
         text-align: left;
     }
@@ -568,7 +567,7 @@ body{
     }
 
     .header .fa-bars:hover{
-        color: #00bfff;
+        color: #378add; /* Blue hover on hamburger */
     }
 
     /* Mobile nav — hidden above viewport by default, toggled via JS */
@@ -578,9 +577,9 @@ body{
         left: 0;
         height: auto;
         width: 100%;
-        background-color: white;
+        background-color: #f0f6ff; /* Light blue-white mobile menu background */
         z-index: 1000;
-        border-top: .1rem solid rgba(0,0,0,.3);
+        border-top: .1rem solid #b5d4f4; /* Soft blue border */
     }
 
     /* Stack nav links vertically on mobile */
@@ -594,9 +593,9 @@ body{
         margin: 1rem 0;
     }
 
-    /* Darker nav link color on white mobile menu */
+    /* Navy link color on light mobile menu */
     .header .navbar ul li a{
-        color: grey;
+        color: #185fa5;
         font-size: 2.4rem;
     }
 
@@ -627,12 +626,12 @@ body{
         font-size: 30px;
     }
 
-    /* Adjust career form card for mobile — lighter background */
+    /* Adjust career form card for mobile — keep light mode style */
     .career{
         width: 94%;
         padding: 2rem 1.4rem;
         border-radius: 18px;
-        background: rgba(93, 129, 207, 0.88);
+        background: #f0f6ff; /* Consistent light blue-white */
     }
 
     .career-form-btn{
@@ -661,7 +660,7 @@ body{
     /* Full-width email input on mobile — restore all borders */
     .footer .footer-newsletter input[type="email"]{
         width: 100%;
-        border-right: 1px solid #ffffff;
+        border-right: 1px solid #85b7eb;
         border-radius: 8px;
     }
 
@@ -673,14 +672,14 @@ body{
 }
 
 /* ===== FOOTER CONTACT & NEWSLETTER CARD STYLES ===== */
-/* Glassmorphism card effect for contact and newsletter blocks */
+/* Soft frosted card effect for contact and newsletter blocks */
 .footer .footer-contact,
 .footer .footer-newsletter{
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.10); /* Subtle white tint over navy */
     padding: 2rem;
     border-radius: 16px;
     backdrop-filter: blur(8px); /* Frosted glass effect */
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: 0.3s;
 }
 
@@ -688,7 +687,7 @@ body{
 .footer .footer-contact:hover,
 .footer .footer-newsletter:hover{
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(12, 68, 124, 0.25); /* Blue-tinted shadow */
 }
 
 /* Row gap between footer columns */
