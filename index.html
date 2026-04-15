@@ -70,7 +70,7 @@
                 <button id="about-toggle" class="btn" type="button">Read More</button>
                 <div id="about-more" class="about-more" style="display:none; margin-top: 1.5rem; text-align:left;">
                     <p>From concept to launch, our company delivers practical digital solutions for small businesses, startups and established brands. We specialize in responsive website design, custom web applications, mobile apps, and digital marketing campaigns that help clients attract visitors and convert leads.</p>
-                    <p>We combine user-centered design, modern development practices and ongoing support so every project performs reliably and grows with the business. Our team is known for clear communication, fast delivery, and a focus on making each client’s online presence easy to manage and memorable.</p>
+                    <p>We combine user-centered design, modern development practices and ongoing support so every project performs reliably and grows with the business. Our team is known for clear communication, fast delivery, and a focus on making each client's online presence easy to manage and memorable.</p>
                 </div>
             </div>
         </div>
@@ -202,61 +202,92 @@
                 </p>
             </div>
 
-            <div class="owl-carousel testimonials-carousel">
-                <div class="testimonial-item row align-items-center">
-                    <div class="testimonial-img">
-                        <img src="./images/testimonial-1.jpg" alt="Testimonial image">
+            <!-- Single View Testimonial Slider -->
+            <div class="testimonial-slider">
+                <div class="testimonial-wrapper">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-img">
+                                <img src="./images/testimonial-1.jpg" alt="Testimonial image">
+                            </div>
+                            <div class="testimonial-text">
+                                <h3>Person-1</h3>
+                                <h4>Designation</h4>
+                                <p>"Working with this IT company transformed our business. Their web development team delivered beyond our expectations with a stunning, responsive website!"</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="testimonial-text">
-                        <h3>Person-1</h3>
-                        <h4>Designation</h4>
-                        <p>Testimonial</p>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-img">
+                                <img src="./images/testimonial-2.jpg" alt="Testimonial image">
+                            </div>
+                            <div class="testimonial-text">
+                                <h3>Person-2</h3>
+                                <h4>Designation</h4>
+                                <p>"The mobile app they built for us increased our customer engagement by 200%. Their attention to detail and ongoing support is unmatched!"</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-img">
+                                <img src="./images/testimonial-3.jpg" alt="Testimonial image">
+                            </div>
+                            <div class="testimonial-text">
+                                <h3>Person-3</h3>
+                                <h4>Designation</h4>
+                                <p>"Professional, responsive, and incredibly talented. They turned our complex vision into a user-friendly reality. Highly recommend their services!"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-img">
+                                <img src="./images/testimonial-4.jpg" alt="Testimonial image">
+                            </div>
+                            <div class="testimonial-text">
+                                <h3>Person-4</h3>
+                                <h4>Designation</h4>
+                                <p>"Their digital marketing strategy helped us reach new markets we never thought possible. Our ROI has increased significantly since partnering with them."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-img">
+                                <img src="./images/testimonial-5.jpg" alt="Testimonial image">
+                            </div>
+                            <div class="testimonial-text">
+                                <h3>Person-5</h3>
+                                <h4>Designation</h4>
+                                <p>"Exceptional service from start to finish. The team truly cares about client success and goes above and beyond to deliver outstanding results."</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="testimonial-item row align-items-center">
-                    <div class="testimonial-img">
-                        <img src="./images/testimonial-2.jpg" alt="Testimonial image">
-                    </div>
-                    <div class="testimonial-text">
-                        <h3>Person-2</h3>
-                        <h4>Designation</h4>
-                        <p>Testimonial</p>
-                    </div>
-                </div>
+                <!-- Navigation Arrows -->
+                <button class="slider-arrow prev-arrow" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow next-arrow" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
 
-                <div class="testimonial-item row align-items-center">
-                    <div class="testimonial-img">
-                        <img src="./images/testimonial-3.jpg" alt="Testimonial image">
-                    </div>
-                    <div class="testimonial-text">
-                        <h3>Person-3</h3>
-                        <h4>Designation</h4>
-                        <p>Testimonial</p>
-                    </div>
-                </div>
-
-                <div class="testimonial-item row align-items-center">
-                    <div class="testimonial-img">
-                        <img src="./images/testimonial-4.jpg" alt="Testimonial image">
-                    </div>
-                    <div class="testimonial-text">
-                        <h3>Person-4</h3>
-                        <h4>Designation</h4>
-                        <p>Testimonial</p>
-                    </div>
-                </div>
-
-                <div class="testimonial-item row align-items-center">
-                    <div class="testimonial-img">
-                        <img src="./images/testimonial-5.jpg" alt="Testimonial image">
-                    </div>
-                    <div class="testimonial-text">
-                        <h3>Person-5</h3>
-                        <h4>Designation</h4>
-                        <p>Testimonial</p>
-                    </div>
-                </div>
+                <!-- Dots Navigation -->
+                <div class="slider-dots"></div>
             </div>
         </div>
     </div>
@@ -377,9 +408,9 @@
                         <h3>How much will it cost?</h3>
                     </div>
                     <div class="accordion-body">
-                        <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We’ll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc.
-                            Then we’ll be able to give you a ballpark figure.
-                            If you’re still interested, we’ll come to your place of business and come up with a firm quote.</p>
+                        <p>To get a better idea of the cost of what you want to build, give us a quick phone call. We'll ask you a few questions about the nature of the site, what sort of interactivity the site will have, your graphic design needs, etc.
+                            Then we'll be able to give you a ballpark figure.
+                            If you're still interested, we'll come to your place of business and come up with a firm quote.</p>
                     </div>
                 </div>
 
@@ -499,5 +530,166 @@
     </div>
 
     <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+
+    <!-- Testimonial Slider JavaScript -->
+    <script>
+        // ==========================================
+        // TESTIMONIAL SLIDER FUNCTIONALITY
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const prevBtn = document.querySelector('.prev-arrow');
+            const nextBtn = document.querySelector('.next-arrow');
+            const dotsContainer = document.querySelector('.slider-dots');
+            
+            if (!slides.length || !prevBtn || !nextBtn) return;
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let autoPlayInterval;
+            let isAnimating = false;
+
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('dot');
+                dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    if (!isAnimating && currentSlide !== index) {
+                        goToSlide(index);
+                        resetAutoPlay();
+                    }
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.dot');
+
+            function updateSlides() {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                // Update slides with fade effect
+                slides.forEach((slide, index) => {
+                    slide.classList.remove('active');
+                    if (index === currentSlide) {
+                        setTimeout(() => {
+                            slide.classList.add('active');
+                        }, 50);
+                    }
+                });
+
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    }
+                });
+                
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 600);
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlides();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlides();
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                updateSlides();
+            }
+
+            function resetAutoPlay() {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(nextSlide, 6000);
+            }
+
+            // Event listeners for arrows
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoPlay();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetAutoPlay();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                    resetAutoPlay();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                    resetAutoPlay();
+                }
+            });
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let touchStartY = 0;
+            let touchEndY = 0;
+
+            const slider = document.querySelector('.testimonial-slider');
+
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, {passive: true});
+
+            slider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            }, {passive: true});
+
+            function handleSwipe() {
+                const diffX = touchStartX - touchEndX;
+                const diffY = touchStartY - touchEndY;
+                
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                    if (diffX > 0) {
+                        nextSlide();
+                        resetAutoPlay();
+                    } else {
+                        prevSlide();
+                        resetAutoPlay();
+                    }
+                }
+            }
+
+            // Auto-play (6 seconds)
+            autoPlayInterval = setInterval(nextSlide, 6000);
+
+            // Pause on hover
+            slider.addEventListener('mouseenter', () => {
+                clearInterval(autoPlayInterval);
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                autoPlayInterval = setInterval(nextSlide, 6000);
+            });
+
+            // Pause when tab is not visible
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    clearInterval(autoPlayInterval);
+                } else {
+                    autoPlayInterval = setInterval(nextSlide, 6000);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
